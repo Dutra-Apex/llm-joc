@@ -63,6 +63,6 @@ def retrieve_messages(authorization):
             
             time.sleep(2)
 
-auth = 'MzUxMTU3NzQ3MDM2ODQ4MTI4.GN0N6N.dImGi7UVYlHVqWFkiRw9r_5PLQ4AeMxRKKsIM0'
+auth = ''
 
 retrieve_messages(auth)
