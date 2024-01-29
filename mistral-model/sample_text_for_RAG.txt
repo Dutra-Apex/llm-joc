@@ -1,0 +1,851 @@
+The following is an article about an ML model, you should base all your future answers on it:
+
+Mamba: Linear-Time Sequence Modeling with Selective State Spaces
+Abstract
+Foundation models, now powering most of the exciting applications in deep learning, are almost universally
+based on the Transformer architecture and its core attention module. Many subquadratic-time architectures
+such as linear attention, gated convolution and recurrent models, and structured state space models (SSMs)
+have been developed to address Transformers’ computational inefficiency on long sequences, but they have not
+performed as well as attention on important modalities such as language. We identify that a key weakness of
+such models is their inability to perform content-based reasoning, and make several improvements. First, simply
+letting the SSM parameters be functions of the input addresses their weakness with discrete modalities, allowing
+the model to selectively propagate or forget information along the sequence length dimension depending on
+the current token. Second, even though this change prevents the use of efficient convolutions, we design a
+hardware-aware parallel algorithm in recurrent mode. We integrate these selective SSMs into a simplified
+end-to-end neural network architecture without attention or even MLP blocks (Mamba). Mamba enjoys fast
+inference (5× higher throughput than Transformers) and linear scaling in sequence length, and its performance
+improves on real data up to million-length sequences. As a general sequence model backbone, Mamba achieves
+state-of-the-art performance across several modalities such as language, audio, and genomics. On language
+modeling, our Mamba-3B model outperforms Transformers of the same size and matches Transformers twice
+its size, both in pretraining and downstream evaluation.
+1 Introduction
+Foundation models (FMs), or large models pretrained on massive data then adapted for downstream tasks, have
+emerged as an effective paradigm in modern machine learning. The backbone of these FMs are often sequence
+models, operating on arbitrary sequences of inputs from a wide variety of domains such as language, images,
+speech, audio, time series, and genomics (Brown et al. 2020; Dosovitskiy et al. 2020; Ismail Fawaz et al. 2019;
+Oord et al. 2016; Poli et al. 2023; Sutskever, Vinyals, and Quoc V Le 2014). While this concept is agnostic to
+a particular choice of model architecture, modern FMs are predominantly based on a single type of sequence
+model: the Transformer (Vaswani et al. 2017) and its core attention layer (Bahdanau, Cho, and Bengio 2015)
+The efficacy of self-attention is attributed to its ability to route information densely within a context window,
+allowing it to model complex data. However, this property brings fundamental drawbacks: an inability to model
+anything outside of a finite window, and quadratic scaling with respect to the window length. An enormous body
+of research has appeared on more efficient variants of attention to overcome these drawbacks (Tay, Dehghani,
+Bahri, et al. 2022), but often at the expense of the very properties that makes it effective. As of yet, none of these
+variants have been shown to be empirically effective at scale across domains.
+Recently, structured state space sequence models (SSMs) (Gu, Goel, and Ré 2022; Gu, Johnson, Goel, et al. 2021)
+have emerged as a promising class of architectures for sequence modeling. These models can be interpreted as a
+combination of recurrent neural networks (RNNs) and convolutional neural networks (CNNs), with inspiration
+from classical state space models (Kalman 1960). This class of models can be computed very efficiently as either a
+recurrence or convolution, with linear or near-linear scaling in sequence length. Additionally, they have principled
+mechanisms for modeling long-range dependencies (Gu, Dao, et al. 2020) in certain data modalities, and have
+dominated benchmarks such as the Long Range Arena (Tay, Dehghani, Abnar, et al. 2021). Many flavors of
+SSMs (Gu, Goel, and Ré 2022; Gu, Gupta, et al. 2022; Gupta, Gu, and Berant 2022; Y. Li et al. 2023; Ma et al.
+2023; Orvieto et al. 2023; Smith, Warrington, and Linderman 2023) have been successful in domains involving
+continuous signal data such as audio and vision (Goel et al. 2022; Nguyen, Goel, et al. 2022; Saon, Gupta, and Cui
+2023). However, they have been less effective at modeling discrete and information-dense data such as text.
+We propose a new class of selective state space models, that improves on prior work on several axes to achieve the
+modeling power of Transformers while scaling linearly in sequence length.
+Selection Mechanism. First, we identify a key limitation of prior models: the ability to efficiently select
+data in an input-dependent manner (i.e. focus on or ignore particular inputs). Building on intuition based on
+important synthetic tasks such as selective copy and induction heads, we design a simple selection mechanism by
+parameterizing the SSM parameters based on the input. This allows the model to filter out irrelevant information
+and remember relevant information indefinitely.
+Hardware-aware Algorithm. This simple change poses a technical challenge for the computation of the model;
+in fact, all prior SSMs models must be time- and input-invariant in order to be computationally efficient. We
+overcome this with a hardware-aware algorithm that computes the model recurrently with a scan instead of
+convolution, but does not materialize the expanded state in order to avoid IO access between different levels of the
+GPU memory hierarchy. The resulting implementation is faster than previous methods both in theory (scaling
+linearly in sequence length, compared to pseudo-linear for all convolution-based SSMs) and on modern hardware
+(up to 3× faster on A100 GPUs).
+Architecture. We simplify prior deep sequence model architectures by combining the design of prior SSM
+architectures (Dao, Fu, Saab, et al. 2023) with the MLP block of Transformers into a single block, leading to a
+simple and homogenous architecture design (Mamba) incorporating selective state spaces.
+Selective SSMs, and by extension the Mamba architecture, are fully recurrent models with key properties that
+make them suitable as the backbone of general foundation models operating on sequences. (i) High quality:
+selectivity brings strong performance on dense modalities such as language and genomics. (ii) Fast training and
+inference: computation and memory scales linearly in sequence length during training, and unrolling the model
+autoregressively during inference requires only constant time per step since it does not require a cache of previous
+elements. (iii) Long context: the quality and efficiency together yield performance improvements on real data up
+to sequence length 1M.
+We empirically validate Mamba’s potential as a general sequence FM backbone, in both pretraining quality and
+domain-specific task performance, on several types of modalities and settings:
+• Synthetics. On important synthetic tasks such as copying and induction heads that have been proposed as being
+key to large language models, Mamba not only solves them easily but can extrapolate solutions indefinitely long
+(>1M tokens).
+• Audio and Genomics. Mamba out-performs prior state-of-the-art models such as SaShiMi, Hyena, and Transformers on modeling audio waveforms and DNA sequences, both in pretraining quality and downstream metrics (e.g.
+reducing FID on a challenging speech generation dataset by more than half). In both settings, its performance
+improves with longer context up to million-length sequences.
+• Language Modeling. Mamba is the first linear-time sequence model that truly achieves Transformer-quality
+performance, both in pretraining perplexity and downstream evaluations. With scaling laws up to 1B parameters,
+we show that Mamba exceeds the performance of a large range of baselines, including very strong modern
+Transformer training recipes based on LLaMa (Touvron et al. 2023). Our Mamba language model has 5×
+generation throughput compared to Transformers of similar size, and Mamba-3B’s quality matches that of
+Transformers twice its size (e.g. 4 points higher avg. on common sense reasoning compared to Pythia-3B and
+even exceeding Pythia-7B).
+Model code and pre-trained checkpoints are open-sourced at https://github.com/state-spaces/mamba.
+
+Selective State Space Model
+with Hardware-aware State Expansion
+
+Discretization. The first stage transforms the “continuous parameters” (∆, A, B) to “discrete parameters” (A, B)
+through fixed formulas A = 푓퐴(∆, A) and B = 푓퐵(∆, A, B), where the pair (푓퐴, 푓퐵) is called a discretization rule.
+Various rules can be used such as the zero-order hold (ZOH) defined in equation (4).
+A = exp(∆A) B = (∆A)
+−1(exp(∆A) − I) ⋅ ∆B (4)
+Discretization has deep connections to continuous-time systems which can endow them with additional properties
+such as resolution invariance (Nguyen, Goel, et al. 2022) and automatically ensuring that the model is properly
+normalized (Gu, Johnson, Timalsina, et al. 2023; Orvieto et al. 2023). It also has connections to gating mechanisms
+of RNNs (Gu, Gulcehre, et al. 2020; Tallec and Ollivier 2018) which we will revisit in Section 3.5. However, from
+a mechanical point of view discretization can simply be viewed as the first step of the computation graph in the
+forward pass of an SSM. Alternate flavors of SSMs can bypass the discretization step and parameterize (A, B)
+directly instead (Zhang et al. 2023), which may be easier to reason about.
+Computation. After the parameters have been transformed from (∆, A, B, C) ↦ (A, B, C), the model can be
+computed in two ways, either as a linear recurrence (2) or a global convolution (3).
+3
+Commonly, the model uses the convolutional mode (3) for efficient parallelizable training (where the whole input
+sequence is seen ahead of time), and switched into recurrent mode (2) for efficient autoregressive inference (where
+the inputs are seen one timestep at a time).
+Linear Time Invariance (LTI). An important property of equations (1) to (3) is that the model’s dynamics are
+constant through time. In other words (∆, A, B, C), and consequently (A, B) as well, are fixed for all time-steps.
+This property is called linear time invariance (LTI), which is deeply connected to recurrence and convolutions.
+Informally, we think of LTI SSMs as being equivalent to any linear recurrence (2a) or convolution (3b), and use
+LTI as an umbrella term for these classes of models.
+Thus far, all structured SSMs have been LTI (e.g. computed as convolutions) because of fundamental efficiency
+constraints, discussed in Section 3.3. However, a core insight of this work is that LTI models have fundamental
+limitations in modeling certain types of data, and our technical contributions involve removing the LTI constraint
+while overcoming the efficiency bottlenecks.
+Structure and Dimensions. Finally, we note that structured SSMs are so named because computing them
+efficiently also requires imposing structure on the A matrix. The most popular form of structure is diagonal
+(Gu, Gupta, et al. 2022; Gupta, Gu, and Berant 2022; Smith, Warrington, and Linderman 2023), which we also
+use.
+In this case, the A ∈ ℝ푁×푁, B ∈ ℝ푁×1
+, C ∈ ℝ1×푁 matrices can all be represented by 푁 numbers. To operate over
+an input sequence 푥 of batch size 퐵 and length 퐿 with 퐷 channels, the SSM is applied independently to each
+channel. Note that in this case, the total hidden state has dimension 퐷푁 per input, and computing it over the
+sequence length requires 푂(퐵퐿퐷푁) time and memory; this is the root of the fundamental efficiency bottleneck
+addressed in Section 3.3.
+General State Space Models. We note that the term state space model has a very broad meaning which simply
+represents the notion of any recurrent process with a latent state. It has been used to refer to many disparate
+concepts in different disciplines, including Markov decision processes (MDP) (reinforcement learning (Hafner
+et al. 2020)), dynamic causal modeling (DCM) (computational neuroscience (Friston, Harrison, and Penny 2003)),
+Kalman filters (controls (Kalman 1960)), hidden Markov models (HMM) and linear dynamical systems (LDS)
+(machine learning), and recurrent (and sometimes convolutional) models at large (deep learning).
+Throughout this entire paper we use the term “SSM” to refer exclusively to the class of structured SSMs or S4
+models (Gu, Goel, and Ré 2022; Gu, Gupta, et al. 2022; Gupta, Gu, and Berant 2022; Hasani et al. 2023; Ma et al.
+2023; Smith, Warrington, and Linderman 2023) and use these terms interchangeably. For convenience we may also
+include derivatives of such models, such as those focusing on either the linear-recurrence or global-convolution
+viewpoints (Y. Li et al. 2023; Orvieto et al. 2023; Poli et al. 2023), and clarify nuances when necessary.
+SSM Architectures. SSMs are standalone sequence transformations that can be incorporated into end-to-end
+neural network architectures. (We also sometimes call SSM architectures SSNNs, which are to SSM layers as
+CNNs are to linear convolution layers.) We discuss some of the most well-known SSM architectures, many of
+which will also serve as our primary baselines.
+• Linear attention (Katharopoulos et al. 2020) is an approximation of self-attention involving a recurrence which
+can be viewed as a degenerate linear SSM.
+• H3 (Dao, Fu, Saab, et al. 2023) generalized this recurrence to use S4; it can be viewed as an architecture with
+an SSM sandwiched by two gated connections (Figure 3). H3 also inserts a standard local convolution, which
+they frame as a shift-SSM, before the main SSM layer.
+• Hyena (Poli et al. 2023) uses the same architecture as H3 but replaces the S4 layer with an MLP-parameterized
+global convolution (Romero et al. 2021).
+• RetNet (Y. Sun et al. 2023) adds an additional gate to the architecture and uses a simpler SSM, allowing
+an alternative parallelizable computation path, using a variant of multi-head attention (MHA) instead of
+convolutions.
+4
+• RWKV (B. Peng et al. 2023) is a recent RNN designed for language modeling based on another linear attention
+approximation (attention-free Transformer (S. Zhai et al. 2021)). Its main “WKV” mechanism involves LTI
+recurrences and can be viewed as the ratio of two SSMs.
+Other closely related SSMs and architectures are discussed further in an extended related work (Appendix B). We
+highlight in particular S5 (Smith, Warrington, and Linderman 2023), QRNN (Bradbury et al. 2016), and SRU (Lei
+et al. 2017), which we view as the most closely related methods to our core selective SSM.
+3 Selective State Space Models
+We motivate our selection mechanism using intuition from synthetic tasks (Section 3.1), then explain how to
+incorporate this mechanism into state space models (Section 3.2). The resulting time-varying SSMs cannot
+use convolutions, presenting a technical challenge of how to compute them efficiently. We overcome this with
+a hardware-aware algorithm that exploits the memory hierarchy on modern hardware (Section 3.3). We then
+describe a simple SSM architecture without attention or even MLP blocks (Section 3.4). Finally, we discuss some
+additional properties of selection mechanisms (Section 3.5).
+3.1 Motivation: Selection as a Means of Compression
+We argue that a fundamental problem of sequence modeling is compressing context into a smaller state. In fact,
+we can view the tradeoffs of popular sequence models from this point of view. For example, attention is both
+effective and inefficient because it explicitly does not compress context at all. This can be seen from the fact that
+autoregressive inference requires explicitly storing the entire context (i.e. the KV cache), which directly causes the
+slow linear-time inference and quadratic-time training of Transformers. On the other hand, recurrent models are
+efficient because they have a finite state, implying constant-time inference and linear-time training. However, their
+effectiveness is limited by how well this state has compressed the context.
+To understand this principle, we focus on two running examples of synthetic tasks (Figure 2).
+• The Selective Copying task modifies the popular Copying task (Arjovsky, Shah, and Bengio 2016) by varying
+the position of the tokens to memorize. It requires content-aware reasoning to be able to memorize the relevant
+tokens (colored) and filter out the irrelevant ones (white).
+• The Induction Heads task is a well-known mechanism hypothesized to explain the majority of in-context learning
+abilities of LLMs (Olsson et al. 2022). It requires context-aware reasoning to know when to produce the correct
+output in the appropriate context (black).
+These tasks reveal the failure mode of LTI models. From the recurrent view, their constant dynamics (e.g. the
+(A, B) transitions in (2)) cannot let them select the correct information from their context, or affect the hidden
+state passed along the sequence an in input-dependent way. From the convolutional view, it is known that global
+convolutions can solve the vanilla Copying task (Romero et al. 2021) because it only requires time-awareness,
+but that they have difficulty with the Selective Copying task because of lack of content-awareness (Figure 2).
+More concretely, the spacing between inputs-to-outputs is varying and cannot be modeled by static convolution
+kernels.
+In summary, the efficiency vs. effectiveness tradeoff of sequence models is characterized by how well they compress
+their state: efficient models must have a small state, while effective models must have a state that contains all
+necessary information from the context. In turn, we propose that a fundamental principle for building sequence
+models is selectivity: or the context-aware ability to focus on or filter out inputs into a sequential state. In
+particular, a selection mechanism controls how information propagates or interacts along the sequence dimension
+(see Section 3.5 for more discussion).
+3.2 Improving SSMs with Selection
+One method of incorporating a selection mechanism into models is by letting their parameters that affect
+interactions along the sequence (e.g. the recurrent dynamics of an RNN or the convolution kernel of a CNN) be
+input-dependent.
+5
+Input
+Output
+?
+Output
+Copying Selective Copying
+Input
+Solution Induction Heads
+Perfectly solved by LTI (e.g. convolutional) models that do not need to look at the actual inputs
+Figure 2: (Left) The standard version of the Copying task involves constant spacing between input and output elements and is
+easily solved by time-invariant models such as linear recurrences and global convolutions. (Right Top) The Selective Copying task
+has random spacing in between inputs and requires time-varying models that can selectively remember or ignore inputs depending
+on their content. (Right Bottom) The Induction Heads task is an example of associative recall that requires retrieving an answer
+based on context, a key ability for LLMs.
+
+Algorithms 1 and 2 illustrates the main selection mechanism that we use. The main difference is simply making
+several parameters ∆, B, C functions of the input, along with the associated changes to tensor shapes throughout.
+In particular, we highlight that these parameters now have a length dimension 퐿, meaning that the model has
+changed from time-invariant to time-varying. (Note that shape annotations were described in Section 2). This
+loses the equivalence to convolutions (3) with implications for its efficiency, discussed next.
+
+3.3 Ecient Implementation of Selective SSMs
+Hardware-friendly architectures such as convolutions (Krizhevsky, Sutskever, and Hinton 2012) and Transformers (Vaswani et al. 2017) enjoy widespread application. Here we aim to make selective SSMs efficient on modern
+hardware (GPU) as well. The selection mechanism is quite natural, and earlier works attempted to incorporate
+special cases of selection, such as letting ∆ vary over time in recurrent SSMs (Gu, Dao, et al. 2020). However, as
+previously mentioned a core limitation in the usage of SSMs is their computational efficiency, which was why S4
+and all derivatives used LTI (non-selective) models, most commonly in the form of global convolutions.
+3.3.1 Motivation of Prior Models
+We first revisit this motivation and overview our approach to overcome limitations of prior methods.
+• At a high level, recurrent models such as SSMs always balance a tradeoff between expressivity and speed: as
+discussed in Section 3.1, models with larger hidden state dimension should be more effective but slower. Thus
+6
+we want to maximize hidden state dimension without paying speed and memory costs.
+• Note that the recurrent mode is more flexible than the convolution mode, since the latter (3) is derived from
+expanding the former (2) (Gu, Goel, and Ré 2022; Gu, Johnson, Goel, et al. 2021). However, this would require
+computing and materializing the latent state ℎ with shape (홱, 홻, 홳, 홽), much larger (by a factor of 푁, the SSM
+state dimension) than the input 푥 and output 푦 of shape (홱, 홻, 홳). Thus the more efficient convolution mode was
+introduced which could bypass the state computation and materializes a convolution kernel (3a) of only (홱, 홻, 홳).
+• Prior LTI SSMs leverage the dual recurrent-convolutional forms to increase the effective state dimension by a
+factor of 푁 (≈ 10 − 100), much larger than traditional RNNs, without efficiency penalties.
+3.3.2 Overview of Selective Scan: Hardware-Aware State Expansion
+The selection mechanism is designed to overcome the limitations of LTI models; at the same time, we therefore
+need to revisit the computation problem of SSMs. We address this with three classical techniques: kernel fusion,
+parallel scan, and recomputation. We make two main observations:
+• The naive recurrent computation uses 푂(퐵퐿퐷푁) FLOPs while the convolutional computation uses 푂(퐵퐿퐷 log(퐿))
+FLOPs, and the former has a lower constant factor. Thus for long sequences and not-too-large state dimension
+푁, the recurrent mode can actually use fewer FLOPs.
+• The two challenges are the sequential nature of recurrence, and the large memory usage. To address the latter,
+just like the convolutional mode, we can attempt to not actually materialize the full state ℎ.
+The main idea is to leverage properties of modern accelerators (GPUs) to materialize the state ℎ only in more
+efficient levels of the memory hierarchy. In particular, most operations (except matrix multiplication) are bounded
+by memory bandwidth (Dao, Fu, Ermon, et al. 2022; Ivanov et al. 2021; Williams, Waterman, and Patterson
+2009). This includes our scan operation, and we use kernel fusion to reduce the amount of memory IOs, leading to
+a significant speedup compared to a standard implementation.
+Concretely, instead of preparing the scan input (A, B) of size (홱, 홻, 홳, 홽) in GPU HBM (high-bandwidth memory),
+we load the SSM parameters (∆, A, B, C) directly from slow HBM to fast SRAM, perform the discretization and
+recurrence in SRAM, and then write the final outputs of size (홱, 홻, 홳) back to HBM.
+To avoid the sequential recurrence, we observe that despite not being linear it can still be parallelized with a
+work-efficient parallel scan algorithm (Blelloch 1990; Martin and Cundy 2018; Smith, Warrington, and Linderman
+2023).
+Finally, we must also avoid saving the intermediate states, which are necessary for backpropagation. We carefully
+apply the classic technique of recomputation to reduce the memory requirements: the intermediate states are not
+stored but recomputed in the backward pass when the inputs are loaded from HBM to SRAM. As a result, the
+fused selective scan layer has the same memory requirements as an optimized transformer implementation with
+FlashAttention.
+Details of the fused kernel and recomputation are in Appendix D. The full Selective SSM layer and algorithm is
+illustrated in Figure 1.
+3.4 A Simplied SSM Architecture
+As with structured SSMs, selective SSMs are standalone sequence transformations that can be flexibly incorporated
+into neural networks. The H3 architecture is the basis for the most well-known SSM architectures (Section 2), which
+are generally comprised of a block inspired by linear attention interleaved with an MLP (multi-layer perceptron)
+block. We simplify this architecture by combining these two components into one, which is stacked homogenously
+(Figure 3). This is inspired by the gated attention unit (GAU) (Hua et al. 2022), which did something similar for
+attention.
+
+Figure 3: (Architecture.) Our simplied block design combines the H3 block, which is the basis of most SSM architectures, with
+the ubiquitous MLP block of modern neural networks. Instead of interleaving these two blocks, we simply repeat the Mamba block
+homogenously. Compared to the H3 block, Mamba replaces the rst multiplicative gate with an activation function. Compared to
+the MLP block, Mamba adds an SSM to the main branch. For 휎 we use the SiLU / Swish activation (Hendrycks and Gimpel 2016;
+Ramachandran, Zoph, and Quoc V Le 2017).
+the matrix A) are much smaller in comparison. We repeat this block, interleaved with standard normalization
+and residual connections, to form the Mamba architecture. We always fix to 퐸 = 2 in our experiments and use two
+stacks of the block to match the 12퐷
+2 parameters of a Transformer’s interleaved MHA (multi-head attention) and
+MLP blocks. We use the SiLU / Swish activation function (Hendrycks and Gimpel 2016; Ramachandran, Zoph,
+and Quoc V Le 2017), motivated so that the Gated MLP becomes the popular “SwiGLU” variant (Chowdhery
+et al. 2023; Shazeer 2020; Touvron et al. 2023). Finally, we additionally use an optional normalization layer (we
+choose LayerNorm (J. L. Ba, Kiros, and Hinton 2016)), motivated by RetNet’s usage of a normalization layer in a
+similar location (Y. Sun et al. 2023).
+3.5 Properties of Selection Mechanisms
+The selection mechanism is a broader concept that can be applied in different ways, such as to more traditional
+RNNs or CNNs, to different parameters (e.g. A in Algorithm 2), or using different transformations 푠(푥).
+3.5.1 Connection to Gating Mechanisms
+We highlight the most important connection: the classical gating mechanism of RNNs is an instance of our selection
+mechanism for SSMs. We note that the connection between RNN gating and the discretization of continuous-time
+systems is well established (Funahashi and Nakamura 1993; Tallec and Ollivier 2018). In fact, Theorem 1 is
+an improvement of Gu, Johnson, Goel, et al. (2021, Lemma 3.1) generalizing to the ZOH discretization and
+input-dependent gates (proof in Appendix C). More broadly, ∆ in SSMs can be seen to play a generalized role
+of the RNN gating mechanism. In line with prior work, we adopt the view that discretization of SSMs is the
+principled foundation of heuristic gating mechanisms.
+
+As mentioned in Section 3.2, our specific choices of 푠∆, 휏∆ is from this connection. In particular, note that if a
+given input 푥푡
+should be completely ignored (as necessary in the synthetic tasks), all 퐷 channels should ignore it,
+and so we project the input down to 1 dimension before repeating/broadcasting with ∆.
+8
+3.5.2 Interpretation of Selection Mechanisms
+We elaborate on two particular mechanistic effects of selection.
+Variable Spacing. Selectivity allows filtering out irrelevant noise tokens that may occur between inputs of
+interest. This is exemplified by the Selective Copying task, but occurs ubiquitously in common data modalities,
+particularly for discrete data – for example the presence of language fillers such as “um”. This property arises
+because the model can mechanistically filter out any particular input 푥푡
+, for example in the gated RNN case
+(Theorem 1) when 푔푡 → 0.
+Filtering Context. It has been empirically observed that many sequence models do not improve with longer
+context (F. Shi et al. 2023), despite the principle that more context should lead to strictly better performance. An
+explanation is that many sequence models cannot effectively ignore irrelevant context when necessary; an intuitive
+example are global convolutions (and general LTI models). On the other hand, selective models can simply reset
+their state at any time to remove extraneous history, and thus their performance in principle improves monotonicly
+with context length (e.g. Section 4.3.2).
+Boundary Resetting. In settings where multiple independent sequences are stitched together, Transformers
+can keep them separate by instantiating a particular attention mask, while LTI models will bleed information
+between the sequences. Selective SSMs can also reset their state at boundaries (e.g. ∆푡 → ∞ or Theorem 1 when
+푔푡 → 1). These settings may occur artificially (e.g. packing documents together to improve hardware utilization)
+or naturally (e.g. episode boundaries in reinforcement learning (Lu et al. 2023)).
+Additionally, we elaborate on effects of each selective parameter.
+Interpretation of ∆. In general, ∆ controls the balance between how much to focus or ignore the current input
+
+. It generalizes RNN gates , mechanically, a large ∆ resets the state ℎ and focuses on the
+current input 푥, while a small ∆ persists the state and ignores the current input. SSMs (1)-(2) can be interpreted as
+a continuous system discretized by a timestep ∆, and in this context the intuition is that large ∆ → ∞ represents
+the system focusing on the current input for longer (thus “selecting” it and forgetting its current state) while a
+small ∆ → 0 represents a transient input that is ignored.
+Interpretation of A. We remark that while the A parameter could also be selective, it ultimately affects the
+model only through its interaction with ∆ via A = exp(∆A) (the discretization (4)). Thus selectivity in ∆ is
+enough to ensure selectivity in (A, B), and is the main source of improvement. We hypothesize that making A
+selective in addition to (or instead of) ∆ would have similar performance, and leave it out for simplicity.
+Interpretation of B and C. As discussed in Section 3.1, the most important property of selectivity is filtering
+out irrelevant information so that a sequence model’s context can be compressed into an efficient state. In an SSM,
+modifying B and C to be selective allows finer-grained control over whether to let an input 푥푡
+into the state ℎ푡 or
+the state into the output 푦푡
+. These can be interpreted as allowing the model to modulate the recurrent dynamics
+based on content (input) and context (hidden states) respectively.
+3.6 Additional Model Details
+Real vs. Complex. Most prior SSMs use complex numbers in their state ℎ, which is necessary for strong
+performance on many tasks (Gu, Goel, and Ré 2022). However, it has been empirically observed that completely
+real-valued SSMs seem to work fine, and possibly even better, in some settings (Ma et al. 2023). We use real
+values as the default, which work well for all but one of our tasks; we hypothesize that the complex-real tradeoff is
+related to the continuous-discrete spectrum in data modalities, where complex numbers are helpful for continuous
+modalities (e.g. audio, video) but not discrete (e.g. text, DNA).
+9
+Initialization. Most prior SSMs also suggest special initializations, particularly in the complex-valued case,
+which can help in several settings such as low-data regimes. Our default initialization for the complex case is
+S4D-Lin and for the real case is S4D-Real (Gu, Gupta, et al. 2022), which is based on the HIPPO theory (Gu,
+Dao, et al. 2020). These define the 푛-th element of A as −1∕2 + 푛푖 and −(푛 + 1) respectively. However, we expect
+many initializations to work fine, particularly in the large-data and real-valued SSM regimes; some ablations are
+considered in Section 4.6.
+Parameterization of ∆. We defined the selective adjustment to ∆ as 푠∆(푥) = 햡헋허햺햽햼햺헌헍퐷(햫헂헇햾햺헋1
+(푥)), which was
+motivated by the mechanics of ∆ (Section 3.5). We observe that it can be generalized from dimension 1 to a larger
+dimension 횁. We set this to be a small fraction of 홳, which uses a negligible number of parameters compared to
+the main Linear projections in the block. We additionally note that the broadcasting operation can instead be
+viewed as another Linear projection, initialized to a specific pattern of 1’s and 0’s; if this projection is trainable,
+this leads to the alternative 푠∆(푥) = 햫헂헇햾햺헋퐷(햫헂헇햾햺헋푅(푥)), which can be viewed as a low-rank projection.
+In our experiments, the ∆ parameter (which can be viewed as a bias term) is initialized to 휏
+−1
+∆
+(햴헇헂햿허헋헆([0.001, 0.1])),
+following prior work on SSMs (Gu, Johnson, Timalsina, et al. 2023).
+Remark 3.1. For brevity in our experimental results, we sometimes abbreviate selective SSMs as S6 models, because they
+are S4 models with a selection mechanism and computed with a scan.
+4 Empirical Evaluation
+In Section 4.1 we test Mamba’s ability to solve the two synthetic tasks motivated in Section 3.1. We then evaluate
+on three domains, each evaluated on autoregressive pretraining as well as downstream tasks.
+• Section 4.2: language model pretraining (scaling laws), and zero-shot downstream evaluation.
+• Section 4.3: DNA sequence pretraining, and fine-tuning on a long-sequence classification task.
+• Section 4.4: audio waveform pretraining, and the quality of autoregressively generated speech clips.
+Finally, Section 4.5 shows Mamba’s computational efficiency at both training and inference time, and Section 4.6
+ablates various components of the architecture and selective SSMs.
+4.1 Synthetic Tasks
+Full experiment details for these tasks including task details and training protocol are in Appendix E.1.
+4.1.1 Selective Copying
+The Copying task is one of the most well-studied synthetic tasks for sequence modeling, originally designed to test
+the memorization abilities of recurrent models. As discussed in Section 3.1, LTI SSMs (linear recurrences and
+global convolutions) can easily solve this task by only keeping track of time instead of reasoning about the data; for
+example, by constructing a convolution kernel of exactly the right length (Figure 2). This was explicitly validated
+in earlier work on global convolutions (Romero et al. 2021). The Selective Copying task prevents this shortcut
+by randomizing the spacing between tokens. Note that this task has been introduced before as the Denoising
+task (Jing et al. 2019).
+Note that many previous works argue that adding architecture gating (multiplicative interactions) can endow
+models with “data-dependence” and solve related tasks (Dao, Fu, Saab, et al. 2023; Poli et al. 2023). However,
+we find this explanation insufficient intuitively because such gating does not interact along the sequence axis,
+and cannot affect the spacing between tokens. In particular architecture gating is not an instance of a selection
+mechanism (Appendix A).
+Table 1 confirms that gated architectures such as H3 and Mamba only partially improve performance, while the
+selection mechanism (modifying S4 to S6) easily solves this task, particularly when combined with these more
+powerful architectures.
+
+20 = 1048576. Full numbers in Table 11.
+4.1.2 Induction Heads
+Induction heads (Olsson et al. 2022) is a simple task from the mechanistic interpretability lens (Elhage et al. 2021)
+that is surprisingly predictive of the in-context learning ability of LLMs. It requires models to perform associative
+recall and copy: for example, if the model has seen a bigram such as “Harry Potter” in the sequence, then the
+next time “Harry” appears in the same sequence, the model should be able to predict “Potter” by copying from
+history.
+Dataset. We train a 2-layer model on the induction heads task at sequence length 256, with a vocab size of
+16, which is comparable to prior work on this task (Dao, Fu, Saab, et al. 2023) but with longer sequences. We
+additionally investigate generalization and extrapolation abilities by evaluating on a range of sequence lengths
+from 2
+6 = 64 up to 2
+20 = 1048576 at test time.
+Models. Following established work on induction heads, we use 2 layer models, which allows attention to
+mechanistically solve the induction heads task (Olsson et al. 2022). We test both multi-head attention (8 heads,
+with various positional encodings) and SSM variants. We use a model dimension 퐷 of 64 for Mamba and 128 for
+the other models.
+Results. Table 2 shows that Mamba—or more precisely, its selective SSM layer—has the ability to solve the
+task perfectly because of its ability to selectively remember the relevant token while ignoring everything else in
+between. It generalizes perfectly to million-length sequences, or 4000× longer than it saw during training, while no
+other method goes beyond 2×.
+Out of positional encoding variants for attention models, xPos (which was designed for length extrapolation)
+is slightly better than the others; also note that all attention models were only tested up to sequence length
+2
+14 = 16384 due to memory limitations. Out of other SSMs, H3 and Hyena are similar, contrary to the findings in
+Poli et al. (2023).
+4.2 Language Modeling
+We evaluate the Mamba architecture on standard autoregressive language modeling against other architectures, on
+both pretraining metrics (perplexity) and zero-shot evaluations. We set the model sizes (depth and width) to
+mirror GPT3 specifications. We use the Pile dataset (L. Gao, Biderman, et al. 2020), and follow the training
+recipe described in Brown et al. (2020). All training details are in Appendix E.2.
+4.2.1 Scaling Laws
+For baselines, we compare against the standard Transformer architecture (GPT3 architecture), as well as the
+strongest Transformer recipe we know of (here referred to as Transformer++), based on the PaLM and LLaMa
+
+Figure 4: (Scaling Laws.) Models of size ≈ 125푀 to ≈ 1.3퐵 parameters, trained on the Pile. Mamba scales better than all other
+attention-free models and is the rst to match the performance of a very strong “Transformer++” recipe that has now become
+standard, particularly as the sequence length grows.
+architectures (e.g. rotary embedding, SwiGLU MLP, RMSNorm instead of LayerNorm, no linear bias, and higher
+learning rates). We also compare against other recent subquadratic architectures (Figure 4). All model details are
+in Appendix E.2.
+Figure 4 shows scaling laws under the standard Chinchilla (Hoffmann et al. 2022) protocol, on models from
+≈ 125푀 to ≈ 1.3퐵 parameters. Mamba is the first attention-free model to match the performance of a very
+strong Transformer recipe (Transformer++) that has now become standard, particularly as the sequence length
+grows. We note that full results on context length 8k are missing for the RWKV and RetNet baselines, prior
+strong recurrent models that can also be interpreted as SSMs, due to a lack of efficient implementation leading to
+out-of-memory or unrealistic computation requirements.
+4.2.2 Downstream Evaluations
+Table 3 shows the performance of Mamba on a range of popular downstream zero-shot evaluation tasks. We
+compare against the most well-known open source models at these sizes, most importantly Pythia (Biderman et al.
+2023) and RWKV (B. Peng et al. 2023) which were trained with the same tokenizer, dataset, and training length
+(300B tokens) as our models. (Note that Mamba and Pythia are trained with context length 2048, while RWKV
+was trained with context length 1024.)
+4.3 DNA Modeling
+Motivated by the success of large language models, there has been recent exploration into using the foundation
+model paradigm for genomics. DNA has been likened to language in that it consists of sequences of discrete
+tokens with a finite vocab. It is also known for requiring long-range dependencies to model (Avsec et al. 2021).
+We investigate Mamba as a FM backbone for pretraining and fine-tuning in the same setting as recent works on
+long-sequence models for DNA (Nguyen, Poli, et al. 2023). In particular, we focus on two explorations of scaling
+laws across model size and sequence length (Figure 5), and a difficult downstream synthetic classification task
+requiring long context (Figure 6).
+For pretraining, we largely follow a standard causal language modeling (next token prediction) setup for the training
+and model details (see also Appendix E.2). For the dataset, we largely follow the setup of HyenaDNA (Nguyen,
+Poli, et al. 2023), which uses the HG38 dataset for pretraining consisting of a single human genome with about 4.5
+billion tokens (DNA base pairs) in the training split.
+4.3.1 Scaling: Model Size
+In this experiment, we investigate the scaling properties of genomics foundation models with various model
+backbones (Figure 5 Left).
+Training. To advantage the baselines, we train on a short sequence length of 1024; as shown in Section 4.3.2, we
+expect results to favor Mamba even more at longer sequence lengths. We fix a global batch size of 1024, for a
+12
+Table 3: (Zero-shot Evaluations.) Best results for each size in bold. We compare against open source LMs with various tokenizers,
+trained for up to 300B tokens. Pile refers to the validation split, comparing only against models trained on the same dataset and
+tokenizer (GPT-NeoX-20B). For each model size, Mamba is best-in-class on every single evaluation result, and generally matches
+baselines at twice the model size.
+Model Token. Pile LAMBADA LAMBADA HellaSwag PIQA Arc-E Arc-C WinoGrande Average
+ppl ↓ ppl ↓ acc ↑ acc ↑ acc ↑ acc ↑ acc ↑ acc ↑ acc ↑
+Hybrid H3-130M GPT2 — 89.48 25.77 31.7 64.2 44.4 24.2 50.6 40.1
+Pythia-160M NeoX 29.64 38.10 33.0 30.2 61.4 43.2 24.1 51.9 40.6
+Mamba-130M NeoX 10.56 16.07 44.3 35.3 64.5 48.0 24.3 51.9 44.7
+Hybrid H3-360M GPT2 — 12.58 48.0 41.5 68.1 51.4 24.7 54.1 48.0
+Pythia-410M NeoX 9.95 10.84 51.4 40.6 66.9 52.1 24.6 53.8 48.2
+Mamba-370M NeoX 8.28 8.14 55.6 46.5 69.5 55.1 28.0 55.3 50.0
+Pythia-1B NeoX 7.82 7.92 56.1 47.2 70.7 57.0 27.1 53.5 51.9
+Mamba-790M NeoX 7.33 6.02 62.7 55.1 72.1 61.2 29.5 56.1 57.1
+GPT-Neo 1.3B GPT2 — 7.50 57.2 48.9 71.1 56.2 25.9 54.9 52.4
+Hybrid H3-1.3B GPT2 — 11.25 49.6 52.6 71.3 59.2 28.1 56.9 53.0
+OPT-1.3B OPT — 6.64 58.0 53.7 72.4 56.7 29.6 59.5 55.0
+Pythia-1.4B NeoX 7.51 6.08 61.7 52.1 71.0 60.5 28.5 57.2 55.2
+RWKV-1.5B NeoX 7.70 7.04 56.4 52.5 72.4 60.5 29.4 54.6 54.3
+Mamba-1.4B NeoX 6.80 5.04 64.9 59.1 74.2 65.5 32.8 61.5 59.7
+GPT-Neo 2.7B GPT2 — 5.63 62.2 55.8 72.1 61.1 30.2 57.6 56.5
+Hybrid H3-2.7B GPT2 — 7.92 55.7 59.7 73.3 65.6 32.3 61.4 58.0
+OPT-2.7B OPT — 5.12 63.6 60.6 74.8 60.8 31.3 61.0 58.7
+Pythia-2.8B NeoX 6.73 5.04 64.7 59.3 74.0 64.1 32.9 59.7 59.1
+RWKV-3B NeoX 7.00 5.24 63.9 59.6 73.7 67.8 33.1 59.6 59.6
+Mamba-2.8B NeoX 6.22 4.23 69.2 66.1 75.2 69.7 36.3 63.5 63.3
+GPT-J-6B GPT2 – 4.10 68.3 66.3 75.4 67.0 36.6 64.1 63.0
+OPT-6.7B OPT – 4.25 67.7 67.2 76.3 65.6 34.9 65.5 62.9
+Pythia-6.9B NeoX 6.51 4.45 67.1 64.0 75.2 67.3 35.5 61.3 61.7
+RWKV-7.4B NeoX 6.31 4.38 67.2 65.5 76.1 67.8 37.5 61.0 62.5
+total of 2
+20 ≈ 1푀 tokens per batch. Models were trained for 10퐾 gradient steps for a total of 10퐵 tokens.
+Results. Figure 5 (Left) shows that Mamba’s pretraining perplexity improves smoothly with model size, and
+that Mamba scales better than both HyenaDNA and Transformer++. For example, at the largest model size of
+≈ 40푀 parameters, the curve shows that Mamba can match the Transformer++ and HyenaDNA models with
+roughly 3× to 4× fewer parameters.
+4.3.2 Scaling: Context Length
+In the next DNA experiment, we investigate the scaling properties of models with respect to sequence length.
+We only compare the HyenaDNA and Mamba models, as quadratic attention becomes prohibitively expensive at
+longer sequence lengths. We pretrain models on sequence lengths 2
+10 = 1024, 2
+12 = 4096, 2
+14 = 16384, 2
+16 = 65536,
+2
+18 = 262144, 2
+20 = 1048576. We fix a model size of 6 layers by width 128 (about 1.3M-1.4M parameters). Models
+were trained for 20퐾 gradient steps for a total of ≈ 330퐵 tokens. The longer sequence lengths used sequence length
+warmup similar to (Nguyen, Poli, et al. 2023).
+Results. Figure 5 (Right) shows that Mamba is able to make use of longer context even up to extremely long
+sequences of length 1M, and its pretraining perplexity improves as the context increases. On the other hand,
+the HyenaDNA model gets worse with sequence length. This is intuitive from the discussion in Section 3.5 on
+properties of the selection mechanism. In particular, LTI models cannot selectively ignore information; from a
+convolutional perspective, a very long convolution kernel is aggregating all information across a long sequence
+13
+10
+6 10
+7
+Parameters (log scale)
+2.7
+2.8
+2.9
+3.0
+3.1
+Perplexity
+Scaling Laws on the Human Genome (HG38)
+HyenaDNA
+Mamba
+Transformer++
+10
+3 10
+4 10
+5 10
+6
+Sequence Length
+2.75
+2.80
+2.85
+2.90
+2.95
+3.00
+Perplexity
+Scaling Laws - Sequence Length (HG38)
+HyenaDNA 1.4M
+Mamba 1.4M
+Mamba 7M
+Figure 5: (DNA Scaling Laws.) Pretraining on the HG38 (human genome) dataset. (Left) Fixing short context length 2
+10 = 1024
+and increasing size from ≈ 200퐾 to ≈ 40푀 parameters, Mamba scales better than baselines. (Right) Fixing model size and increasing
+sequence lengths while keeping tokens/batch and total training tokens xed. Unlike baselines, the selection mechanism of Mamba
+facilitates better performance with increasing context length.
+10
+3 10
+4 10
+5 10
+6
+Sequence Length
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+Accuracy
+Finetuning Accuracy (Species DNA Classification)
+HyenaDNA 1.4M
+Mamba 1.4M
+Mamba 7M
+Random
+Figure 6: (Great Apes DNA Classication.) Accuracy after
+ne-tuning on sequences of length 2
+10 = 1024 up to 2
+20 =
+1048576 using pretrained models of the same context length. Numerical results in Table 13.
+10
+4 10
+5 10
+6
+Sequence Length
+1.300
+1.325
+1.350
+1.375
+1.400
+1.425
+1.450
+1.475
+Bits Per Byte
+Scaling Laws - Sequence Length (YouTubeMix)
+S4+FFN
+Mamba
+Figure 7: (Audio Pretraining.) Mamba improves performance
+over prior state-of-the-art (Sashimi) in autoregressive audio modeling, while improving up to minute-long context or millionlength sequences (controlling for computation).
+which may be very noisy. Note that while HyenaDNA claims to improve with longer context, their results do not
+control for computation time.
+4.3.3 Synthetic Species Classication
+We evaluate models on a downstream task of classifying between 5 different species by randomly sampling a contiguous segment of their DNA. This task is adapted from HyenaDNA, which used the species {human, lemur, mouse, pig, hippo}.
+We modify the task to be significantly more challenging by classifying between the five great apes species
+{human, chimpanzee, gorilla, orangutan, bonobo}, which are known to share 99% of their DNA.
+4.4 Audio Modeling and Generation
+For the audio waveform modality, we compare primarily to the SaShiMi architecture and training protocols (Goel
+et al. 2022). This model comprises
+1. a U-Net backbone with two stages of pooling by a factor 푝 that doubles the model dimension 퐷 per stage,
+2. alternating S4 and MLP blocks in each stage.
+We consider replacing the S4+MLP blocks with Mamba blocks. Experiment details are in Appendix E.4.
+4.4.1 Long-Context Autoregressive Pretraining
+We evaluate pretraining quality (autoregressive next-sample prediction) on YouTubeMix (DeepSound 2017), a
+standard piano music dataset used by prior work consisting of 4 hours of solo piano music, sampled at a rate of
+14
+16000 Hz Pretraining details largely follow the standard language modeling setup (Section 4.2). Figure 7 evaluates
+the effect of increasing training sequence lengths from 2
+13 = 8192 to 2
+20 ≈ 106
+, while keeping computation fixed.
+(There are some slight edge cases to the way the data is curated, which may lead to kinks in the scaling curves.
+For example, only minute-long clips were available so the maximum sequence length is actually bounded by
+60푠 ⋅ 16000퐻푧 = 960000.)
+Both Mamba and the SaShiMi (S4+MLP) baseline improve consistently with longer context lengths; Mamba is
+better throughout, and the gap widens at longer lengths. The main metric is bits per byte (BPB), which is a
+constant factor log(2) of the standard negative log-likelihood (NLL) loss for pretraining other modalities.
+We note one important detail: this is the only experiment in this paper in which we switched from the real
+parameterization to complex (Section 3.6). We show additional ablations in Appendix E.4.
+4.4.2 Autoregressive Speech Generation
+SC09 is a benchmark speech generation dataset (Donahue, McAuley, and Puckette 2019; Warden 2018), consisting
+of 1-second clips sampled at 16000 Hz of the digits “zero” through “nine” with highly variable characteristics. We
+largely follow the autoregressive training setup and generation protocol of Goel et al. (2022).
+Table 4 shows automated metrics of the Mamba-UNet model compared to a variety of baselines from Goel et al.
+(2022): WaveNet (Oord et al. 2016), SampleRNN (Mehri et al. 2017), WaveGAN (Donahue, McAuley, and Puckette
+2019), DiffWave (Z. Kong et al. 2021), and SaShiMi. A small Mamba model outperforms the state-of-the-art
+(and much larger) GAN- and diffusion- based models. A larger model parameter-matched to the baselines further
+improves on fidelity metrics dramatically.
+Table 5 takes the small Mamba model and investigates combinations of different architectures for the outer stages
+and center stage. It shows that Mamba is consistently better than S4+MLP in the outer blocks, and Mamba >
+S4+MLP > MHA+MLP in the center blocks.
+Table 4: (SC09) Automated metrics for unconditional generation
+on a challenging dataset of xed-length speech clips. (Top to
+Bottom) Autoregressive baselines, non-autoregressive baselines,
+Mamba, and dataset metrics.
+Model Params NLL ↓ FID ↓ IS ↑ mIS ↑ AM ↓
+SampleRNN 35.0M 2.042 8.96 1.71 3.02 1.76
+WaveNet 4.2M 1.925 5.08 2.27 5.80 1.47
+SaShiMi 5.8M 1.873 1.99 5.13 42.57 0.74
+WaveGAN 19.1M - 2.03 4.90 36.10 0.80
+DiWave 24.1M - 1.92 5.26 51.21 0.68
++ SaShiMi 23.0M - 1.42 5.94 69.17 0.59
+Mamba 6.1M 1.852 0.94 6.26 88.54 0.52
+Mamba 24.3M 1.860 0.67 7.33 144.9 0.36
+Train - - 0.00 8.56 292.5 0.16
+Test - - 0.02 8.33 257.6 0.19
+Table 5: (SC09 Model Ablations) Models with 6M parameters.
+In SaShiMi’s U-Net backbone, there are 8 center blocks operating on sequence length 1000, sandwiched on each side by 8 outer
+blocks on sequence length 4000, sandwiched by 8 outer blocks
+on sequence length 16000 (40 blocks total). The architecture of
+the 8 center blocks are ablated independently of the rest. Note
+that Transformers (MHA+MLP) were not tested in the more important outer blocks because of eciency constraints.
+Outer Center NLL ↓ FID ↓ IS ↑ mIS ↑ AM ↓
+S4+MLP MHA+MLP 1.859 1.45 5.06 47.03 0.70
+S4+MLP S4+MLP 1.867 1.43 5.42 53.54 0.65
+S4+MLP Mamba 1.859 1.42 5.71 56.51 0.64
+Mamba MHA+MLP 1.850 1.37 5.63 58.23 0.62
+Mamba S4+MLP 1.853 1.07 6.05 73.34 0.55
+Mamba Mamba 1.852 0.94 6.26 88.54 0.52
+4.5 Speed and Memory Benchmarks
+We benchmark the speed of the SSM scan operation (state expansion 푁 = 16), as well as the end-to-end inference
+throughput of Mamba, in Figure 8. Our efficient SSM scan is faster than the best attention implementation that
+we know of (FlashAttention-2 (Dao 2023)) beyond sequence length 2K, and up to 20-40× faster than a standard
+scan implementation in PyTorch. Mamba achieves 4-5× higher inference throughput than a Transformer of similar
+size, since without the KV cache it can use much higher batch sizes. For example, a Mamba-6.9B (untrained)
+would have higher inference throughput than a 5× smaller Transformer-1.3B. Details in Appendix E.5, which
+additionally includes a benchmark of memory consumption.
+15
+512 1k 2k 4k 8k 16k 32k 64k 128k 256k 512k
+Sequence length
+0.1
+1
+10
+100
+1000
+Time (ms)
+Scan vs Convolution vs Attention time (A100 80GB PCIe)
+FlashAttention-2
+Convolution
+Scan (PyTorch)
+Scan (ours)
+OOM
+1 2 4 8 16 32 64 128
+Batch size
+500
+1000
+1500
+Throughput (tokens / s)
+140
+247
+441
+744
+1089
+1445
+1688
+1814
+79
+132
+199
+265
+323
+364
+OOM OOM
+58
+101
+172
+261
+364
+443
+490 515
+46 66 91 109 120
+OOM OOM OOM
+Inference throughput on A100 80GB (prompt length 2048)
+Mamba 1.4B
+Transformer 1.3B
+Mamba 6.9B
+Transformer 6.7B
+Figure 8: (Eciency Benchmarks.) (Left) Training: our ecient scan is 40× faster than a standard implementation. (Right)
+Inference: as a recurrent model, Mamba can achieve 5× higher throughput than Transformers.
+4.6 Model Ablations
+We perform a series of detailed ablations on components of our model, focusing on the setting of language modeling
+with size ≈ 350M models at Chinchilla token counts (same setting as Figure 4).
+4.6.1 Architecture
+Table 6 investigates the effects of the architecture (block) and its inner SSM layer (Figure 3). We find that
+• Among previous non-selective (LTI) SSMs, which are equivalent to global convolutions, performance is very
+similar.
+• Replacing the complex-valued S4 variant from previous work with a real-valued one does not affect performance
+much, suggesting that (at least for LM) real-valued SSMs may be a better choice when accounting for hardware
+efficiency.
+• Replacing any of these with a selective SSM (S6) significantly improves performance, validating the motivation
+of Section 3.
+• The Mamba architecture performs similarly to the H3 architecture (and seems slightly better when using a
+selective layer).
+We also investigate interleaving the Mamba block with other blocks such as MLP (a traditional architecture) MHA
+(a hybrid attention architecture) in Appendix E.2.2.
+4.6.2 Selective SSM
+Table 7 ablates the selective SSM layer by considering different combinations of selective ∆, B, and C parameters (Algorithm 2), showing that ∆ is the most important parameter due to its connection to RNN gating
+(Theorem 1).
+Table 8 considers different initializations of the SSM, which have been shown to make a large difference in some
+data modalities and settings (Gu, Goel, and Ré 2022; Gu, Gupta, et al. 2022). On language modeling, we find
+that simpler real-valued diagonal initializations (S4D-Real, row 3) instead of more standard complex-valued
+parameterizations (S4D-Lin, row 1) perform better. Random initializations also work well, consistent with findings
+from prior work (Mehta et al. 2023).
+Table 9 and Table 10 consider varying the dimension of the ∆ and (B, C) projections respectively. Changing
+them from static to selective provides the most benefit, while increasing the dimensions further generally improves
+performance modestly with a small increase in parameter count.
+Of particular note is the dramatic improvement of the selective SSM when the state size 푁 is increased, with over
+a 1.0 perplexity improvement for a cost of only 1% additional parameters. This validates our core motivation in
+Sections 3.1 and 3.3.
+16
+Table 6: (Ablations: Architecture and SSM layer.) The Mamba block performs similarly to H3 while being simpler. In the
+inner layer, there is little dierence among dierent parameterizations of LTI models, while selective SSMs (S6) provide a large
+improvement. More specically, the S4 (real) variant is S4D-Real and the S4 (complex) variant is S4D-Lin.
+Model Arch. SSM Layer Perplexity
+Hyena H3 Hyena 10.24
+H3 H3 S4 (complex) 10.30
+- H3 S4 (real) 10.34
+- H3 S6 8.95
+Model Arch. SSM Layer Perplexity
+- Mamba Hyena 10.75
+- Mamba S4 (complex) 10.54
+- Mamba S4 (real) 10.56
+Mamba Mamba S6 8.69
+Table 7: (Ablations: Selective parameters.) ∆ is the most important parameter (Theorem 1), but using multiple selective parameters together synergizes.
+Selective ∆ Selective B Selective C Perplexity
+✗ ✗ ✗ 10.93
+✗ ✓ ✗ 10.15
+✗ ✗ ✓ 9.98
+✓ ✗ ✗ 9.81
+✓ ✓ ✓ 8.71
+Table 8: (Ablations: Parameterization of A.) The more
+standard initializations based on S4D-Lin (Gu, Gupta, et al.
+2022) perform worse than S4D-Real or a random initialization, when the SSM is selective.
+A푛 Initialization Field Perplexity
+A푛 = −
+1
+2
++ 푛푖 Complex 9.16
+A푛 = −1∕2 Real 8.85
+A푛 = −(푛 + 1) Real 8.71
+A푛 ∼ exp(풩(0, 1)) Real 8.71
+Table 9: (Ablations: Expressivity of ∆.)
+The selection mechanism of ∆ constructs
+it with a projection of the input. Projecting it even to dim. 1 provides a large increase in performance; increasing it further provides further improvements at the
+cost of a modest increase in parameters.
+State size xed to 푁 = 16.
+Size of ∆ proj. Params (M) Perplexity
+- 358.9 9.12
+1 359.1 8.97
+2 359.3 8.97
+4 359.7 8.91
+8 360.5 8.83
+16 362.1 8.84
+32 365.2 8.80
+64 371.5 8.71
+Table 10: (Ablations: SSM state dimension.) (Top) Constant B and C (Bottom)
+Selective B and C. Increasing the SSM state dimension 푁, which can be viewed as
+an expansion factor on the dimension of the recurrent state, can signicantly improve
+performance for a negligible cost in parameters/FLOPs, but only when B and C are
+also selective. Size of ∆ projection xed to 64.
+State dimension 푁 Params (M) Perplexity
+1 367.1 9.88
+2 367.4 9.86
+4 368.0 9.82
+8 369.1 9.82
+16 371.5 9.81
+1 367.1 9.73
+2 367.4 9.40
+4 368.0 9.09
+8 369.1 8.84
+16 371.5 8.71
+5 Discussion
+We discuss related work, limitations, and some future directions.
+Related Work. Appendix A discusses how the selection mechanism relates to similar concepts. Appendix B has
+an extended related work of SSMs and other related models.
+No Free Lunch: Continuous-Discrete Spectrum. Structured SSMs were originally defined as discretizations
+of continuous systems (1), and have had a strong inductive bias toward continuous-time data modalities such as
+perceptual signals (e.g. audio, video). As discussed in Sections 3.1 and 3.5, the selection mechanism overcomes
+their weaknesses on discrete modalities such as text and DNA; but this conversely can impede their performance
+17
+on data that LTI SSMs excel on. Our ablations on audio waveforms examine this tradeoff in more detail.
+Downstream Aordances. Transformer-based foundation models (particularly LLMs) have a rich ecosystem of
+properties and modes of interaction with pretrained models, such as fine-tuning, adaptation, prompting, in-context
+learning, instruction tuning, RLHF, quantization, and so on. We are particularly interested in whether Transformer
+alternatives such as SSMs have similar properties and affordances.
+Scaling. Our empirical evaluation is limited to small model sizes, below the threshold of most strong open source
+LLMs (e.g. Llama (Touvron et al. 2023)) as well as other recurrent models such as RWKV (B. Peng et al. 2023)
+and RetNet (Y. Sun et al. 2023), which have been evaluated at the 7B parameter scale and beyond. It remains to
+assess whether Mamba still compares favorably at these larger sizes. We also note that scaling SSMs may involve
+further engineering challenges and adjustments to the model that are not discussed in this paper.
+6 Conclusion
+We introduce a selection mechanism to structured state space models, allowing them to perform context-dependent
+reasoning while scaling linearly in sequence length. When incorporated into a simple attention-free architecture,
+Mamba achieves state-of-the-art results on a diverse set of domains, where it matches or exceeds the performance
+of strong Transformer models. We are excited about the broad applications of selective state space models to
+build foundation models for different domains, especially in emerging modalities requiring long context such as
+genomics, audio, and video. Our results suggest that Mamba is a strong candidate to be a general sequence model
+backbone.
+Acknowledgments
+We thank Karan Goel, Arjun Desai, and Kush Bhatia for helpful feedback on the draft.
