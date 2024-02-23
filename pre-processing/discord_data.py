@@ -10,7 +10,7 @@ def retrieve_messages(channelid):
     }
     r = requests.get(f'https://discord.com/api/v9/channels/{channelid}/messages', headers=headers)
     messages = json.loads(r.text)
-    with open('mod2.json', 'w') as file:
+    with open('mod1.json', 'w') as file:
         json.dump(messages, file, ensure_ascii=False, indent=4)
 
 retrieve_messages(728714605156892744)
