@@ -3,7 +3,6 @@
 import requests
 import json
 
-
 def retrieve_messages(channelid):
     headers = {
         'authorization': 'your discord auth here'
@@ -13,4 +12,5 @@ def retrieve_messages(channelid):
     with open('mod1.json', 'w') as file:
         json.dump(messages, file, ensure_ascii=False, indent=4)
 
-retrieve_messages(728714605156892744)
+channel_id = 000000000000
+retrieve_messages(channel_id)
