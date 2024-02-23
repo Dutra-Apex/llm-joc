@@ -13,4 +13,6 @@
 6. TO DO: Pull all clear questions out into a separate json for further processing;
 7. TO DO: Anonymize the user ID's so we can track specific users without seeing who they are
 
-This approach involves evaluating each message against several criteria indicative of relevance, like the presence of coding keywords, code blocks, technical terms, or the type of conversation (question, solution, discussion). Each criterion can contribute a certain score, and the total score will indicate the message's overall relevance. Those additional parameters of relevance can help train the bot on how to evaluate discussions as apposed to answering questions, for example
+This approach involves evaluating each message against several criteria indicative of relevance, like the presence of coding keywords, code blocks, technical terms, or the type of conversation (question, solution, discussion). Each criterion can contribute a certain score, and the total score will indicate the message's overall relevance. Those additional parameters of relevance can help train the bot on how to evaluate discussions as apposed to answering questions, for example;
+
+
