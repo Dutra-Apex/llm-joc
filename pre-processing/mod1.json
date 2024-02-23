@@ -1,0 +1,3960 @@
+[
+  {
+    "id": "1210286855807959060",
+    "type": 0,
+    "content": "Hi $herry! We have received your help request! You can expect a reply from a staff or peer mentor within 24 hours, directly to your message in discord!",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "1156278053547286580",
+      "username": "JoyOfCodingBot",
+      "avatar": "8554a90169e32620d5e3bed47f686c34",
+      "discriminator": "8809",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "bot": true,
+      "banner": null,
+      "accent_color": null,
+      "global_name": null,
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-22T18:07:52.467000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": []
+  },
+  {
+    "id": "1210286855086411816",
+    "type": 0,
+    "content": "<@&1156625309366485052> Could I get some guidance with this problem? Wrong output:/ # 3. Write a function, count_e, that takes a list of strings as a parameter an returns the \n# total nuumber of upper and lower case e's(\"E\" and \"e\") in all the strings in the list. \n# Test that your function workds with multiple examples.\n# Example funtion call:                                                 Output\n# print(count_e([\"hi:, \"hello\", \"EEK!\"]))                                 3\n# list  = ([\"hi\", \"hello\", \"EEK!\"])\n\ndef count_e(list):\n        quan = 0\n        for string in list:\n            quan += string.upper().count(\"E\")\n            return quan\ndef main():\n    print(count_e([\"hi\", \"hello\", \"EEK!\"]))\nmain()\nC:\\Users\\Sherry\\PycharmProjects\\Sandbox\\venv\\Scripts\\python.exe C:/Users/Sherry/PycharmProjects/Sandbox/practice.py\n\n0\n\nProcess finished with exit code 0",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "1192695630951358486",
+      "username": "herry_29026",
+      "avatar": null,
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "$herry",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [],
+    "mention_roles": ["1156625309366485052"],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-22T18:07:52.295000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": []
+  },
+  {
+    "id": "1210267207443943495",
+    "type": 0,
+    "content": "Hi Leon! We have received your help request! You can expect a reply from a staff or peer mentor within 24 hours, directly to your message in discord!",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "1156278053547286580",
+      "username": "JoyOfCodingBot",
+      "avatar": "8554a90169e32620d5e3bed47f686c34",
+      "discriminator": "8809",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "bot": true,
+      "banner": null,
+      "accent_color": null,
+      "global_name": null,
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-22T16:49:47.932000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": []
+  },
+  {
+    "id": "1210267206655418368",
+    "type": 0,
+    "content": "<@&1156625309366485052> I have been traveling for the last 2 wks.  My computer shut down and I have difficulty finding a link to retrieve the lessons in order to continue where I left off.  Is there a link where I can sign in.  I did find the link to the Mini Boot Camp course but it doesn't have a link to the major course.  Forgive me if I don't respond immediately; I'm still on the road.  Actually, I'm in the air.... Thank You...Happy hacking!",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "1196982302069248002",
+      "username": "leon_60839",
+      "avatar": null,
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Leon",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [],
+    "mention_roles": ["1156625309366485052"],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-22T16:49:47.744000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": []
+  },
+  {
+    "id": "1210261265990287381",
+    "type": 0,
+    "content": "Hi Doug W! We have received your help request! You can expect a reply from a staff or peer mentor within 24 hours, directly to your message in discord!",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "1156278053547286580",
+      "username": "JoyOfCodingBot",
+      "avatar": "8554a90169e32620d5e3bed47f686c34",
+      "discriminator": "8809",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "bot": true,
+      "banner": null,
+      "accent_color": null,
+      "global_name": null,
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-22T16:26:11.379000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": []
+  },
+  {
+    "id": "1210261264048193617",
+    "type": 0,
+    "content": "<@&1156625309366485052> I am stuck with finding the total lines and total words in the Writing Files Day 5 exercise.  I'm not sure where to initialize my total variables and where to add the values. # Doug\n\nreadfile1 = \"text1.txt\"\nreadfile2 = \"text2.txt\"\nreadfile3 = \"text3.txt\"\n\noutfile = open(\"counts.txt\",\"w\")\n\ntotalLines = 0\ntotalWords = 0\n\n#open file\ndef openfile(readfile):\n    numLines = 0\n    numWords = 0\n    readme = open(readfile,\"r\")\n\n    for line in readme:\n        numLines += 1\n        totalLines += numLines\n\n        for word in line.split():\n            numWords += 1\n            totalWords += numWords\n\n    outline = readfile + \" : \" + str(numLines) + \" lines, \" + str(numWords) + \" words\"\n    print(outline)\n    print(outline, file=outfile)\n\n    readme.close()\n\ndef main():\n    openfile(readfile1)\n#    totalLines += numLines\n#    totalWords += numWords\n    openfile(readfile2)\n#    totalLines += numLines\n#    totalWords += numWords\n    openfile(readfile3)\n#    totalLines += numLines\n#    totalWords += numWords\n\n    outfile.close()\n\nmain()",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "1204637519262777395",
+      "username": "dougw7024",
+      "avatar": null,
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Doug W",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [
+      {
+        "id": "1210261263939010580",
+        "filename": "image.png",
+        "size": 206178,
+        "url": "https://cdn.discordapp.com/attachments/728714605156892744/1210261263939010580/image.png?ex=65e9eaa2&is=65d775a2&hm=b5b7dda7d2186b20fe36c93947997a559f9f6a15dd263b99b251363ec43f0f0c&",
+        "proxy_url": "https://media.discordapp.net/attachments/728714605156892744/1210261263939010580/image.png?ex=65e9eaa2&is=65d775a2&hm=b5b7dda7d2186b20fe36c93947997a559f9f6a15dd263b99b251363ec43f0f0c&",
+        "width": 1440,
+        "height": 912,
+        "content_type": "image/png",
+        "content_scan_version": 1,
+        "placeholder": "PQgGBIDHuaiQeXmEeIU/1PNRWw==",
+        "placeholder_version": 1
+      }
+    ],
+    "embeds": [],
+    "mentions": [],
+    "mention_roles": ["1156625309366485052"],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-22T16:26:10.916000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": []
+  },
+  {
+    "id": "1210227057150271538",
+    "type": 0,
+    "content": "For this particular learning activity there were no files or practice questions, only the solution video which then I created everything by watching that.",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "474941284776411137",
+      "username": "seekeroftruths",
+      "avatar": "7fcbcdd03155ef06b3cc4b4992781c8f",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "JamesBond",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-22T14:10:15.356000+00:00",
+    "edited_timestamp": "2024-02-22T14:11:36.068000+00:00",
+    "flags": 0,
+    "components": [],
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "id": "1210130914089115668",
+    "type": 19,
+    "content": "Whoa! Where did you get that and the letter_grades files from?! Or did you just make some stuff up for testing? 😮",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "885498730588041236",
+      "username": "ladanimo",
+      "avatar": "d9cae1980a71d8a852042f9c94730a04",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "LAdanimo",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [
+      {
+        "id": "474941284776411137",
+        "username": "seekeroftruths",
+        "avatar": "7fcbcdd03155ef06b3cc4b4992781c8f",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "JamesBond",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      }
+    ],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-22T07:48:13.064000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "message_reference": {
+      "channel_id": "728714605156892744",
+      "message_id": "1209867254972289094",
+      "guild_id": "728714241242169406"
+    },
+    "referenced_message": {
+      "id": "1209867254972289094",
+      "type": 0,
+      "content": "Day 5: Learning Activity Dictionaries: This was only the solution   🥲",
+      "channel_id": "728714605156892744",
+      "author": {
+        "id": "474941284776411137",
+        "username": "seekeroftruths",
+        "avatar": "7fcbcdd03155ef06b3cc4b4992781c8f",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "JamesBond",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      },
+      "attachments": [
+        {
+          "id": "1209867254393479239",
+          "filename": "image.png",
+          "size": 1214643,
+          "url": "https://cdn.discordapp.com/attachments/728714605156892744/1209867254393479239/image.png?ex=65e87baf&is=65d606af&hm=cb510de9743d38530d0b8a29b71d827ebd3e086b5e77307b3296cec800cb7dad&",
+          "proxy_url": "https://media.discordapp.net/attachments/728714605156892744/1209867254393479239/image.png?ex=65e87baf&is=65d606af&hm=cb510de9743d38530d0b8a29b71d827ebd3e086b5e77307b3296cec800cb7dad&",
+          "width": 3360,
+          "height": 2096,
+          "content_type": "image/png",
+          "content_scan_version": 1,
+          "placeholder": "yPcBBIDPZ3WuaGaWiWgAVQM0RA==",
+          "placeholder_version": 1
+        }
+      ],
+      "embeds": [],
+      "mentions": [],
+      "mention_roles": [],
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false,
+      "timestamp": "2024-02-21T14:20:31.832000+00:00",
+      "edited_timestamp": null,
+      "flags": 0,
+      "components": []
+    }
+  },
+  {
+    "id": "1210091777948786759",
+    "type": 0,
+    "content": "Day 5: Activity Data Project: Start of problem, solved how to create output that looks the same, decided on what functions look like   🔥   🔥   🔥",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "474941284776411137",
+      "username": "seekeroftruths",
+      "avatar": "7fcbcdd03155ef06b3cc4b4992781c8f",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "JamesBond",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [
+      {
+        "id": "1210091777651122186",
+        "filename": "image.png",
+        "size": 1553318,
+        "url": "https://cdn.discordapp.com/attachments/728714605156892744/1210091777651122186/image.png?ex=65e94cca&is=65d6d7ca&hm=6c8a0f2a199495fdf6321a0574f16e5e3d47fe007ba3d808f2240ff85078f9e1&",
+        "proxy_url": "https://media.discordapp.net/attachments/728714605156892744/1210091777651122186/image.png?ex=65e94cca&is=65d6d7ca&hm=6c8a0f2a199495fdf6321a0574f16e5e3d47fe007ba3d808f2240ff85078f9e1&",
+        "width": 3360,
+        "height": 2092,
+        "content_type": "image/png",
+        "content_scan_version": 1,
+        "placeholder": "CAgCBICfZod7d3eCqmgIzoTQSw==",
+        "placeholder_version": 1
+      }
+    ],
+    "embeds": [],
+    "mentions": [],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-22T05:12:42.281000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": []
+  },
+  {
+    "id": "1210064139058159686",
+    "type": 0,
+    "content": "hmm. seems it means the third character not the 3rd index.  So I was wrong.",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "534494086527451138",
+      "username": "agentjagentj",
+      "avatar": "d32abff1f151236977b72a8921630e96",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "AgentJ",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-22T03:22:52.656000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": []
+  },
+  {
+    "id": "1210062897036795904",
+    "type": 0,
+    "content": "''' \"\"\"\nWrite a function mangle that takes a string as a parameter and returns the \nstring after performing the following operations: \ni. Converting the string to all upper case letters\nii. Removing the third character\niii. Removing the third to last character\nTest that your function works.\nHint: Think about how you can remove from a string by creating a new string, adding \ncharacters to it, and omitting the characters you don't want?\nExample function calls: Output:\nprint(mangle(\"hellothere\")) HELOTHRE\nprint(mangle(\"42 degrees Celsius\")) 42DEGREES CELSUS   # this one here I get 42EGREES CELSUS\nprint(mangle(\"eeeeeee\")) EEEEE\n\"\"\"\ndef mangle(text: str) -> str:\n    upper = text.upper()\n    remove_third = upper[:3] + upper[4:]\n    last_third = remove_third[:-3] + remove_third[-2:]\n    return last_third\n\ndef main():\n    # Test cases\n    print(mangle(\"abcdefghijkl\"))\n    print(mangle(\"hellothere\"))\n    print(mangle(\"42 degrees Celsius\"))\n    print(mangle(\"eeeeeee\"))\n    print()\n\nif __name__ == \"__main__\":\n    main()\n\nPS D:\\joy of coding\\mastering the 7 basics bootcamp\\week 03 funtions using lists & strings\\day 03 lists & strings\\learning activity\\writing a program with lists & strings\\writing lists 1>  d:; cd 'd:\\joy of coding\\mastering the 7 basics bootcamp\\week 03 funtions using lists & strings\\day 03 lists & strings\\learning activity\\writing a program with lists & strings\\writing lists 1'; & 'd:\\Users\\Joseph\\AppData\\Local\\Programs\\Python\\Python312\\python.exe' 'c:\\Users\\Joseph\\.vscode\\extensions\\ms-python.debugpy-2024.0.0-win32-x64\\bundled\\libs\\debugpy\\adapter/../..\\debugpy\\launcher' '52155' '--' 'd:\\joy of coding\\mastering the 7 basics bootcamp\\week 03 funtions using lists & strings\\day 03 lists & strings\\learning activity\\writing a program with lists & strings\\writing lists 1\\mangle.py' \nABCEFGHIKL\nHELOTHRE\n42 EGREES CELSUS\nEEEEE\n\nI am wondering is my program wrong? Or is the example wrong?",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "534494086527451138",
+      "username": "agentjagentj",
+      "avatar": "d32abff1f151236977b72a8921630e96",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "AgentJ",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-22T03:17:56.535000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": []
+  },
+  {
+    "id": "1209958135024984134",
+    "type": 19,
+    "content": "thank you. I think I have it now. My brain is no bueno these days.",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "1183273563634020473",
+      "username": "delene76",
+      "avatar": "49ce12b8bda7bec9d0156c98836bbfd1",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Delene",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [
+      {
+        "id": "885498730588041236",
+        "username": "ladanimo",
+        "avatar": "d9cae1980a71d8a852042f9c94730a04",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "LAdanimo",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      }
+    ],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-21T20:21:39.325000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "message_reference": {
+      "channel_id": "728714605156892744",
+      "message_id": "1209796842401964042",
+      "guild_id": "728714241242169406"
+    },
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "🙏"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ],
+    "referenced_message": {
+      "id": "1209796842401964042",
+      "type": 19,
+      "content": "No it's not, but it's also meant to take each word one at a time exactly as it's shown in the list -- i.e., \"done\" and 'done' (or **done** with any other capitalizations/characters/words) are not the same as just **done** by itself 😉",
+      "channel_id": "728714605156892744",
+      "author": {
+        "id": "885498730588041236",
+        "username": "ladanimo",
+        "avatar": "d9cae1980a71d8a852042f9c94730a04",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "LAdanimo",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [
+        {
+          "id": "1183273563634020473",
+          "username": "delene76",
+          "avatar": "49ce12b8bda7bec9d0156c98836bbfd1",
+          "discriminator": "0",
+          "public_flags": 0,
+          "premium_type": 0,
+          "flags": 0,
+          "banner": null,
+          "accent_color": null,
+          "global_name": "Delene",
+          "avatar_decoration_data": null,
+          "banner_color": null
+        }
+      ],
+      "mention_roles": [],
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false,
+      "timestamp": "2024-02-21T09:40:44.167000+00:00",
+      "edited_timestamp": "2024-02-21T09:50:46.175000+00:00",
+      "flags": 0,
+      "components": [],
+      "message_reference": {
+        "channel_id": "728714605156892744",
+        "message_id": "1209758831601786880",
+        "guild_id": "728714241242169406"
+      }
+    }
+  },
+  {
+    "id": "1209951160128245791",
+    "type": 0,
+    "content": "<@1164749387189190696>",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "1123775548829749368",
+      "username": "alain6992",
+      "avatar": "137366b4715bd36bfab4135ca7ca5ac4",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": null,
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [
+      {
+        "id": "1164749387189190696",
+        "username": "cheryl1020",
+        "avatar": "8569adcbd36c70a7578c017bf5604ea5",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "🧚🏾♀ Cheryl",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      }
+    ],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-21T19:53:56.380000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": []
+  },
+  {
+    "id": "1209867254972289094",
+    "type": 0,
+    "content": "Day 5: Learning Activity Dictionaries: This was only the solution   🥲",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "474941284776411137",
+      "username": "seekeroftruths",
+      "avatar": "7fcbcdd03155ef06b3cc4b4992781c8f",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "JamesBond",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [
+      {
+        "id": "1209867254393479239",
+        "filename": "image.png",
+        "size": 1214643,
+        "url": "https://cdn.discordapp.com/attachments/728714605156892744/1209867254393479239/image.png?ex=65e87baf&is=65d606af&hm=cb510de9743d38530d0b8a29b71d827ebd3e086b5e77307b3296cec800cb7dad&",
+        "proxy_url": "https://media.discordapp.net/attachments/728714605156892744/1209867254393479239/image.png?ex=65e87baf&is=65d606af&hm=cb510de9743d38530d0b8a29b71d827ebd3e086b5e77307b3296cec800cb7dad&",
+        "width": 3360,
+        "height": 2096,
+        "content_type": "image/png",
+        "content_scan_version": 1,
+        "placeholder": "yPcBBIDPZ3WuaGaWiWgAVQM0RA==",
+        "placeholder_version": 1
+      }
+    ],
+    "embeds": [],
+    "mentions": [],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-21T14:20:31.832000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": []
+  },
+  {
+    "id": "1209796842401964042",
+    "type": 19,
+    "content": "No it's not, but it's also meant to take each word one at a time exactly as it's shown in the list -- i.e., \"done\" and 'done' (or **done** with any other capitalizations/characters/words) are not the same as just **done** by itself 😉",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "885498730588041236",
+      "username": "ladanimo",
+      "avatar": "d9cae1980a71d8a852042f9c94730a04",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "LAdanimo",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [
+      {
+        "id": "1183273563634020473",
+        "username": "delene76",
+        "avatar": "49ce12b8bda7bec9d0156c98836bbfd1",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Delene",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      }
+    ],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-21T09:40:44.167000+00:00",
+    "edited_timestamp": "2024-02-21T09:50:46.175000+00:00",
+    "flags": 0,
+    "components": [],
+    "message_reference": {
+      "channel_id": "728714605156892744",
+      "message_id": "1209758831601786880",
+      "guild_id": "728714241242169406"
+    },
+    "referenced_message": {
+      "id": "1209758831601786880",
+      "type": 0,
+      "content": "<@&1156625309366485052> Is this code from week 3 day 4 act 1 nr 2b supposed to keep repeating \"Please enter a word, 'done' to finish:\" even after you enter the listed words from the comment section?",
+      "channel_id": "728714605156892744",
+      "author": {
+        "id": "1183273563634020473",
+        "username": "delene76",
+        "avatar": "49ce12b8bda7bec9d0156c98836bbfd1",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Delene",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      },
+      "attachments": [
+        {
+          "id": "1209758831307915284",
+          "filename": "wk3d4_act_1_nr2b.jpg",
+          "size": 126822,
+          "url": "https://cdn.discordapp.com/attachments/728714605156892744/1209758831307915284/wk3d4_act_1_nr2b.jpg?ex=65e816b5&is=65d5a1b5&hm=cf604a9e3b28b626e365173f7849c8a80c64dc557db7b20f1f158e194ee52fdb&",
+          "proxy_url": "https://media.discordapp.net/attachments/728714605156892744/1209758831307915284/wk3d4_act_1_nr2b.jpg?ex=65e816b5&is=65d5a1b5&hm=cf604a9e3b28b626e365173f7849c8a80c64dc557db7b20f1f158e194ee52fdb&",
+          "width": 1233,
+          "height": 631,
+          "content_type": "image/jpeg",
+          "content_scan_version": 1,
+          "placeholder": "PQgGDIBgl2eFaIeHh3h9z7z2rQ==",
+          "placeholder_version": 1
+        }
+      ],
+      "embeds": [],
+      "mentions": [],
+      "mention_roles": ["1156625309366485052"],
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false,
+      "timestamp": "2024-02-21T07:09:41.686000+00:00",
+      "edited_timestamp": "2024-02-21T07:10:24.242000+00:00",
+      "flags": 0,
+      "components": []
+    }
+  },
+  {
+    "id": "1209758831601786880",
+    "type": 0,
+    "content": "<@&1156625309366485052> Is this code from week 3 day 4 act 1 nr 2b supposed to keep repeating \"Please enter a word, 'done' to finish:\" even after you enter the listed words from the comment section?",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "1183273563634020473",
+      "username": "delene76",
+      "avatar": "49ce12b8bda7bec9d0156c98836bbfd1",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Delene",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [
+      {
+        "id": "1209758831307915284",
+        "filename": "wk3d4_act_1_nr2b.jpg",
+        "size": 126822,
+        "url": "https://cdn.discordapp.com/attachments/728714605156892744/1209758831307915284/wk3d4_act_1_nr2b.jpg?ex=65e816b5&is=65d5a1b5&hm=cf604a9e3b28b626e365173f7849c8a80c64dc557db7b20f1f158e194ee52fdb&",
+        "proxy_url": "https://media.discordapp.net/attachments/728714605156892744/1209758831307915284/wk3d4_act_1_nr2b.jpg?ex=65e816b5&is=65d5a1b5&hm=cf604a9e3b28b626e365173f7849c8a80c64dc557db7b20f1f158e194ee52fdb&",
+        "width": 1233,
+        "height": 631,
+        "content_type": "image/jpeg",
+        "content_scan_version": 1,
+        "placeholder": "PQgGDIBgl2eFaIeHh3h9z7z2rQ==",
+        "placeholder_version": 1
+      }
+    ],
+    "embeds": [],
+    "mentions": [],
+    "mention_roles": ["1156625309366485052"],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-21T07:09:41.686000+00:00",
+    "edited_timestamp": "2024-02-21T07:10:24.242000+00:00",
+    "flags": 0,
+    "components": []
+  },
+  {
+    "id": "1209579050260242502",
+    "type": 19,
+    "content": "That all makes sense. It's hard to get my brain out of the never ending loop of what-ifs as Delene mentioned. I appreciate you!",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "804918031334899713",
+      "username": "stephanie_c777",
+      "avatar": null,
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Stephanie C",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [
+      {
+        "id": "1202046296597475478",
+        "username": "krisbailey_80844",
+        "avatar": "bf6ca3959f84b80c06f4872a9b03a2df",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "KrisB",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      }
+    ],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-20T19:15:18.474000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "message_reference": {
+      "channel_id": "728714605156892744",
+      "message_id": "1209570415052193842",
+      "guild_id": "728714241242169406"
+    },
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "❤️"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ],
+    "referenced_message": {
+      "id": "1209570415052193842",
+      "type": 19,
+      "content": "<@804918031334899713>, I would have to agree with <@1183273563634020473> - keep moving.  I have some prior professional experience, so I’m not new to coding, but I remember when I was, and some concepts will take some time and actual coding to fully grasp.  It took me until my first year as a professional to REALLY understand For Loops!!  I managed to understand them enough to get by in my college courses, but they never really made sense until I had to use them ALL the time.  I had a better handle on far more advanced concepts before I could really wrap my head around a simple loop.  It’s normal to overthink some of this stuff and definitely post your questions.",
+      "channel_id": "728714605156892744",
+      "author": {
+        "id": "1202046296597475478",
+        "username": "krisbailey_80844",
+        "avatar": "bf6ca3959f84b80c06f4872a9b03a2df",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "KrisB",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [
+        {
+          "id": "804918031334899713",
+          "username": "stephanie_c777",
+          "avatar": null,
+          "discriminator": "0",
+          "public_flags": 0,
+          "premium_type": 0,
+          "flags": 0,
+          "banner": null,
+          "accent_color": null,
+          "global_name": "Stephanie C",
+          "avatar_decoration_data": null,
+          "banner_color": null
+        },
+        {
+          "id": "1183273563634020473",
+          "username": "delene76",
+          "avatar": "49ce12b8bda7bec9d0156c98836bbfd1",
+          "discriminator": "0",
+          "public_flags": 0,
+          "premium_type": 0,
+          "flags": 0,
+          "banner": null,
+          "accent_color": null,
+          "global_name": "Delene",
+          "avatar_decoration_data": null,
+          "banner_color": null
+        }
+      ],
+      "mention_roles": [],
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false,
+      "timestamp": "2024-02-20T18:40:59.680000+00:00",
+      "edited_timestamp": null,
+      "flags": 0,
+      "components": [],
+      "message_reference": {
+        "channel_id": "728714605156892744",
+        "message_id": "1209418982185238578",
+        "guild_id": "728714241242169406"
+      }
+    }
+  },
+  {
+    "id": "1209578769359310858",
+    "type": 19,
+    "content": "Thank you! I'm moving on. Getting out of the analysis paralysis. 😂",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "804918031334899713",
+      "username": "stephanie_c777",
+      "avatar": null,
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Stephanie C",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [
+      {
+        "id": "1183273563634020473",
+        "username": "delene76",
+        "avatar": "49ce12b8bda7bec9d0156c98836bbfd1",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Delene",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      }
+    ],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-20T19:14:11.502000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "message_reference": {
+      "channel_id": "728714605156892744",
+      "message_id": "1209418982185238578",
+      "guild_id": "728714241242169406"
+    },
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🚀"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ],
+    "referenced_message": {
+      "id": "1209418982185238578",
+      "type": 19,
+      "content": "keep moving. They have vocab practice and identifying the different things as you keep going. You can always paste your code in here and ask your questions or bring them to an open q&a or python party tomorrow.  Asking questions is good. Getting lost in the what ifs and questions is not productive. I have to stop myself from doing that. I just tell myself to keep going and the answers will come. If I still don't understand by the next set of lessons, I'll start researching my \"issue.\"",
+      "channel_id": "728714605156892744",
+      "author": {
+        "id": "1183273563634020473",
+        "username": "delene76",
+        "avatar": "49ce12b8bda7bec9d0156c98836bbfd1",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Delene",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [
+        {
+          "id": "804918031334899713",
+          "username": "stephanie_c777",
+          "avatar": null,
+          "discriminator": "0",
+          "public_flags": 0,
+          "premium_type": 0,
+          "flags": 0,
+          "banner": null,
+          "accent_color": null,
+          "global_name": "Stephanie C",
+          "avatar_decoration_data": null,
+          "banner_color": null
+        }
+      ],
+      "mention_roles": [],
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false,
+      "timestamp": "2024-02-20T08:39:15.271000+00:00",
+      "edited_timestamp": null,
+      "flags": 0,
+      "components": [],
+      "message_reference": {
+        "channel_id": "728714605156892744",
+        "message_id": "1209374020928016444",
+        "guild_id": "728714241242169406"
+      }
+    }
+  },
+  {
+    "id": "1209570415052193842",
+    "type": 19,
+    "content": "<@804918031334899713>, I would have to agree with <@1183273563634020473> - keep moving.  I have some prior professional experience, so I’m not new to coding, but I remember when I was, and some concepts will take some time and actual coding to fully grasp.  It took me until my first year as a professional to REALLY understand For Loops!!  I managed to understand them enough to get by in my college courses, but they never really made sense until I had to use them ALL the time.  I had a better handle on far more advanced concepts before I could really wrap my head around a simple loop.  It’s normal to overthink some of this stuff and definitely post your questions.",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "1202046296597475478",
+      "username": "krisbailey_80844",
+      "avatar": "bf6ca3959f84b80c06f4872a9b03a2df",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "KrisB",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [
+      {
+        "id": "804918031334899713",
+        "username": "stephanie_c777",
+        "avatar": null,
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Stephanie C",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      },
+      {
+        "id": "1183273563634020473",
+        "username": "delene76",
+        "avatar": "49ce12b8bda7bec9d0156c98836bbfd1",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Delene",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      }
+    ],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-20T18:40:59.680000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "message_reference": {
+      "channel_id": "728714605156892744",
+      "message_id": "1209418982185238578",
+      "guild_id": "728714241242169406"
+    },
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👆"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "💯"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ],
+    "referenced_message": {
+      "id": "1209418982185238578",
+      "type": 19,
+      "content": "keep moving. They have vocab practice and identifying the different things as you keep going. You can always paste your code in here and ask your questions or bring them to an open q&a or python party tomorrow.  Asking questions is good. Getting lost in the what ifs and questions is not productive. I have to stop myself from doing that. I just tell myself to keep going and the answers will come. If I still don't understand by the next set of lessons, I'll start researching my \"issue.\"",
+      "channel_id": "728714605156892744",
+      "author": {
+        "id": "1183273563634020473",
+        "username": "delene76",
+        "avatar": "49ce12b8bda7bec9d0156c98836bbfd1",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Delene",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [
+        {
+          "id": "804918031334899713",
+          "username": "stephanie_c777",
+          "avatar": null,
+          "discriminator": "0",
+          "public_flags": 0,
+          "premium_type": 0,
+          "flags": 0,
+          "banner": null,
+          "accent_color": null,
+          "global_name": "Stephanie C",
+          "avatar_decoration_data": null,
+          "banner_color": null
+        }
+      ],
+      "mention_roles": [],
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false,
+      "timestamp": "2024-02-20T08:39:15.271000+00:00",
+      "edited_timestamp": null,
+      "flags": 0,
+      "components": [],
+      "message_reference": {
+        "channel_id": "728714605156892744",
+        "message_id": "1209374020928016444",
+        "guild_id": "728714241242169406"
+      }
+    }
+  },
+  {
+    "id": "1209563588264722552",
+    "type": 19,
+    "content": "I thought that might be the case.  I got a text message as soon as I hit submit on the survey and the advanced problem solving appeared in my course.",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "1202046296597475478",
+      "username": "krisbailey_80844",
+      "avatar": "bf6ca3959f84b80c06f4872a9b03a2df",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "KrisB",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [
+      {
+        "id": "505198520001888266",
+        "username": "euphina",
+        "avatar": "a3146a7886bf5e4a470f9194fe10375e",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 3,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Euphina",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      }
+    ],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-20T18:13:52.047000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "message_reference": {
+      "channel_id": "728714605156892744",
+      "message_id": "1209331272804073472",
+      "guild_id": "728714241242169406"
+    },
+    "referenced_message": {
+      "id": "1209331272804073472",
+      "type": 19,
+      "content": "Fantastic! We've actually started automating access to the Advanced Problem Solving course once you make this post, so go ahead and refresh your JOC library to see your new course if you haven't already<3 congrats on moving on!!",
+      "channel_id": "728714605156892744",
+      "author": {
+        "id": "505198520001888266",
+        "username": "euphina",
+        "avatar": "a3146a7886bf5e4a470f9194fe10375e",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 3,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Euphina",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [
+        {
+          "id": "1202046296597475478",
+          "username": "krisbailey_80844",
+          "avatar": "bf6ca3959f84b80c06f4872a9b03a2df",
+          "discriminator": "0",
+          "public_flags": 0,
+          "premium_type": 0,
+          "flags": 0,
+          "banner": null,
+          "accent_color": null,
+          "global_name": "KrisB",
+          "avatar_decoration_data": null,
+          "banner_color": null
+        }
+      ],
+      "mention_roles": [],
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false,
+      "timestamp": "2024-02-20T02:50:43.725000+00:00",
+      "edited_timestamp": null,
+      "flags": 0,
+      "components": [],
+      "message_reference": {
+        "channel_id": "728714605156892744",
+        "message_id": "1209212044340101213",
+        "guild_id": "728714241242169406"
+      }
+    }
+  },
+  {
+    "id": "1209453877141970994",
+    "type": 19,
+    "content": "That's a good point. I didn't even think about that. I haven't really implemented any error handling in anything yet. I will probably go back at some point and consider that.",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "912899799790022667",
+      "username": "norstar666",
+      "avatar": "eb2f2f813464f1245750e9b9f51db79c",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Nomad Norstar Phoenix",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [
+      {
+        "id": "505198520001888266",
+        "username": "euphina",
+        "avatar": "a3146a7886bf5e4a470f9194fe10375e",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 3,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Euphina",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      }
+    ],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-20T10:57:54.877000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "message_reference": {
+      "channel_id": "728714605156892744",
+      "message_id": "1209325204002705408",
+      "guild_id": "728714241242169406"
+    },
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ],
+    "referenced_message": {
+      "id": "1209325204002705408",
+      "type": 19,
+      "content": "Definitely goes above and beyond here!! I love your use of a lambda function - that's a more advanced technique<3. One thing to consider with this - what happens if you have more than one student with a grade of 100 per semester? Which student gets to become the top student with your current set up? Aka, what's your tiebreaker? Not anything that you need to implement now, just a thought to consider 😁",
+      "channel_id": "728714605156892744",
+      "author": {
+        "id": "505198520001888266",
+        "username": "euphina",
+        "avatar": "a3146a7886bf5e4a470f9194fe10375e",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 3,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Euphina",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [
+        {
+          "id": "912899799790022667",
+          "username": "norstar666",
+          "avatar": "eb2f2f813464f1245750e9b9f51db79c",
+          "discriminator": "0",
+          "public_flags": 0,
+          "premium_type": 0,
+          "flags": 0,
+          "banner": null,
+          "accent_color": null,
+          "global_name": "Nomad Norstar Phoenix",
+          "avatar_decoration_data": null,
+          "banner_color": null
+        }
+      ],
+      "mention_roles": [],
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false,
+      "timestamp": "2024-02-20T02:26:36.810000+00:00",
+      "edited_timestamp": null,
+      "flags": 0,
+      "components": [],
+      "message_reference": {
+        "channel_id": "728714605156892744",
+        "message_id": "1209184376085024808",
+        "guild_id": "728714241242169406"
+      }
+    }
+  },
+  {
+    "id": "1209418982185238578",
+    "type": 19,
+    "content": "keep moving. They have vocab practice and identifying the different things as you keep going. You can always paste your code in here and ask your questions or bring them to an open q&a or python party tomorrow.  Asking questions is good. Getting lost in the what ifs and questions is not productive. I have to stop myself from doing that. I just tell myself to keep going and the answers will come. If I still don't understand by the next set of lessons, I'll start researching my \"issue.\"",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "1183273563634020473",
+      "username": "delene76",
+      "avatar": "49ce12b8bda7bec9d0156c98836bbfd1",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Delene",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [
+      {
+        "id": "804918031334899713",
+        "username": "stephanie_c777",
+        "avatar": null,
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Stephanie C",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      }
+    ],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-20T08:39:15.271000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "message_reference": {
+      "channel_id": "728714605156892744",
+      "message_id": "1209374020928016444",
+      "guild_id": "728714241242169406"
+    },
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "🫶"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ],
+    "referenced_message": {
+      "id": "1209374020928016444",
+      "type": 19,
+      "content": "I have been practicing and giving myself little projects that aren't in the videos. That helps, but then I question \"well, why does this work here?\" or \"why is this wrapped in quotes when that isn't?\". Do you recommend moving on and not trying to remember all of vocab and what-not? I have a tendency to overthink and over anaylze things to death, which is why I came on here. 🙂",
+      "channel_id": "728714605156892744",
+      "author": {
+        "id": "804918031334899713",
+        "username": "stephanie_c777",
+        "avatar": null,
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Stephanie C",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [
+        {
+          "id": "1183273563634020473",
+          "username": "delene76",
+          "avatar": "49ce12b8bda7bec9d0156c98836bbfd1",
+          "discriminator": "0",
+          "public_flags": 0,
+          "premium_type": 0,
+          "flags": 0,
+          "banner": null,
+          "accent_color": null,
+          "global_name": "Delene",
+          "avatar_decoration_data": null,
+          "banner_color": null
+        }
+      ],
+      "mention_roles": [],
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false,
+      "timestamp": "2024-02-20T05:40:35.672000+00:00",
+      "edited_timestamp": "2024-02-20T05:40:49.760000+00:00",
+      "flags": 0,
+      "components": [],
+      "message_reference": {
+        "channel_id": "728714605156892744",
+        "message_id": "1209372927641002084",
+        "guild_id": "728714241242169406"
+      }
+    }
+  },
+  {
+    "id": "1209374020928016444",
+    "type": 19,
+    "content": "I have been practicing and giving myself little projects that aren't in the videos. That helps, but then I question \"well, why does this work here?\" or \"why is this wrapped in quotes when that isn't?\". Do you recommend moving on and not trying to remember all of vocab and what-not? I have a tendency to overthink and over anaylze things to death, which is why I came on here. 🙂",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "804918031334899713",
+      "username": "stephanie_c777",
+      "avatar": null,
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Stephanie C",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [
+      {
+        "id": "1183273563634020473",
+        "username": "delene76",
+        "avatar": "49ce12b8bda7bec9d0156c98836bbfd1",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Delene",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      }
+    ],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-20T05:40:35.672000+00:00",
+    "edited_timestamp": "2024-02-20T05:40:49.760000+00:00",
+    "flags": 0,
+    "components": [],
+    "message_reference": {
+      "channel_id": "728714605156892744",
+      "message_id": "1209372927641002084",
+      "guild_id": "728714241242169406"
+    },
+    "referenced_message": {
+      "id": "1209372927641002084",
+      "type": 19,
+      "content": "it's not going to make sense without practice. Watch the videos, practice coding. It's language. You'll learn as you do and become more familiar with how everything goes together.",
+      "channel_id": "728714605156892744",
+      "author": {
+        "id": "1183273563634020473",
+        "username": "delene76",
+        "avatar": "49ce12b8bda7bec9d0156c98836bbfd1",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Delene",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [
+        {
+          "id": "804918031334899713",
+          "username": "stephanie_c777",
+          "avatar": null,
+          "discriminator": "0",
+          "public_flags": 0,
+          "premium_type": 0,
+          "flags": 0,
+          "banner": null,
+          "accent_color": null,
+          "global_name": "Stephanie C",
+          "avatar_decoration_data": null,
+          "banner_color": null
+        }
+      ],
+      "mention_roles": [],
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false,
+      "timestamp": "2024-02-20T05:36:15.012000+00:00",
+      "edited_timestamp": null,
+      "flags": 0,
+      "components": [],
+      "message_reference": {
+        "channel_id": "728714605156892744",
+        "message_id": "1209368559256469524",
+        "guild_id": "728714241242169406"
+      }
+    }
+  },
+  {
+    "id": "1209372927641002084",
+    "type": 19,
+    "content": "it's not going to make sense without practice. Watch the videos, practice coding. It's language. You'll learn as you do and become more familiar with how everything goes together.",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "1183273563634020473",
+      "username": "delene76",
+      "avatar": "49ce12b8bda7bec9d0156c98836bbfd1",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Delene",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [
+      {
+        "id": "804918031334899713",
+        "username": "stephanie_c777",
+        "avatar": null,
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Stephanie C",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      }
+    ],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-20T05:36:15.012000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "message_reference": {
+      "channel_id": "728714605156892744",
+      "message_id": "1209368559256469524",
+      "guild_id": "728714241242169406"
+    },
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ],
+    "referenced_message": {
+      "id": "1209368559256469524",
+      "type": 0,
+      "content": "For anyone that has time to help a girl out....not with an actual coding issue. I am getting stuck in knowing the why behind every little thing in week 1. I have watched and rewatched and watched again all the videos. I'm worried if I don't get these simple basics down as I move forward I'm going to get lost. I have never done any kind of coding before other than a week before I signed up. I am completely new to this and all the lingo.  From those that have never coded before, but are further along in the program, is it better to keep moving and it'll make sense later? Or....is my way the right way? Get these simple basics down first and know them so well I can literally code in my sleep?",
+      "channel_id": "728714605156892744",
+      "author": {
+        "id": "804918031334899713",
+        "username": "stephanie_c777",
+        "avatar": null,
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Stephanie C",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "mention_roles": [],
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false,
+      "timestamp": "2024-02-20T05:18:53.508000+00:00",
+      "edited_timestamp": null,
+      "flags": 0,
+      "components": []
+    }
+  },
+  {
+    "id": "1209368559256469524",
+    "type": 0,
+    "content": "For anyone that has time to help a girl out....not with an actual coding issue. I am getting stuck in knowing the why behind every little thing in week 1. I have watched and rewatched and watched again all the videos. I'm worried if I don't get these simple basics down as I move forward I'm going to get lost. I have never done any kind of coding before other than a week before I signed up. I am completely new to this and all the lingo.  From those that have never coded before, but are further along in the program, is it better to keep moving and it'll make sense later? Or....is my way the right way? Get these simple basics down first and know them so well I can literally code in my sleep?",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "804918031334899713",
+      "username": "stephanie_c777",
+      "avatar": null,
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Stephanie C",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-20T05:18:53.508000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "id": "1209331272804073472",
+    "type": 19,
+    "content": "Fantastic! We've actually started automating access to the Advanced Problem Solving course once you make this post, so go ahead and refresh your JOC library to see your new course if you haven't already<3 congrats on moving on!!",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "505198520001888266",
+      "username": "euphina",
+      "avatar": "a3146a7886bf5e4a470f9194fe10375e",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 3,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Euphina",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [
+      {
+        "id": "1202046296597475478",
+        "username": "krisbailey_80844",
+        "avatar": "bf6ca3959f84b80c06f4872a9b03a2df",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "KrisB",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      }
+    ],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-20T02:50:43.725000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "message_reference": {
+      "channel_id": "728714605156892744",
+      "message_id": "1209212044340101213",
+      "guild_id": "728714241242169406"
+    },
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "🤔"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ],
+    "referenced_message": {
+      "id": "1209212044340101213",
+      "type": 0,
+      "content": "<@&1156625309366485052> \"it's coding time!\"",
+      "channel_id": "728714605156892744",
+      "author": {
+        "id": "1202046296597475478",
+        "username": "krisbailey_80844",
+        "avatar": "bf6ca3959f84b80c06f4872a9b03a2df",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "KrisB",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "mention_roles": ["1156625309366485052"],
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false,
+      "timestamp": "2024-02-19T18:56:57.444000+00:00",
+      "edited_timestamp": null,
+      "flags": 0,
+      "components": []
+    }
+  },
+  {
+    "id": "1209325204002705408",
+    "type": 19,
+    "content": "Definitely goes above and beyond here!! I love your use of a lambda function - that's a more advanced technique<3. One thing to consider with this - what happens if you have more than one student with a grade of 100 per semester? Which student gets to become the top student with your current set up? Aka, what's your tiebreaker? Not anything that you need to implement now, just a thought to consider 😁",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "505198520001888266",
+      "username": "euphina",
+      "avatar": "a3146a7886bf5e4a470f9194fe10375e",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 3,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Euphina",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [
+      {
+        "id": "912899799790022667",
+        "username": "norstar666",
+        "avatar": "eb2f2f813464f1245750e9b9f51db79c",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Nomad Norstar Phoenix",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      }
+    ],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-20T02:26:36.810000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "message_reference": {
+      "channel_id": "728714605156892744",
+      "message_id": "1209184376085024808",
+      "guild_id": "728714241242169406"
+    },
+    "referenced_message": {
+      "id": "1209184376085024808",
+      "type": 0,
+      "content": "<@&1156625309366485052> I am looking for feedback on my code for the data project.",
+      "channel_id": "728714605156892744",
+      "author": {
+        "id": "912899799790022667",
+        "username": "norstar666",
+        "avatar": "eb2f2f813464f1245750e9b9f51db79c",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Nomad Norstar Phoenix",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      },
+      "attachments": [
+        {
+          "id": "1209184375544094790",
+          "filename": "practice_Data_Project.PNG",
+          "size": 99148,
+          "url": "https://cdn.discordapp.com/attachments/728714605156892744/1209184375544094790/practice_Data_Project.PNG?ex=65e5ffb4&is=65d38ab4&hm=cab0afd956936df74c8dbd573e0a87ca136459900fe215ec52a1bb4959449915&",
+          "proxy_url": "https://media.discordapp.net/attachments/728714605156892744/1209184375544094790/practice_Data_Project.PNG?ex=65e5ffb4&is=65d38ab4&hm=cab0afd956936df74c8dbd573e0a87ca136459900fe215ec52a1bb4959449915&",
+          "width": 682,
+          "height": 1682,
+          "content_type": "image/png",
+          "content_scan_version": 1,
+          "placeholder": "CQgCCwSfi1eHi4i574vqn6c=",
+          "placeholder_version": 1
+        }
+      ],
+      "embeds": [],
+      "mentions": [],
+      "mention_roles": ["1156625309366485052"],
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false,
+      "timestamp": "2024-02-19T17:07:00.818000+00:00",
+      "edited_timestamp": null,
+      "flags": 0,
+      "components": []
+    }
+  },
+  {
+    "id": "1209322742210633818",
+    "type": 19,
+    "content": "This top line I think holds your answer 🙂 what variable is holding the information that you want to square? What's it called? I'll give you a hint - it's whatever you name it when you write your parameters 😉",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "505198520001888266",
+      "username": "euphina",
+      "avatar": "a3146a7886bf5e4a470f9194fe10375e",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 3,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Euphina",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [
+      {
+        "id": "1192695630951358486",
+        "username": "herry_29026",
+        "avatar": null,
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "$herry",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      }
+    ],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-20T02:16:49.873000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "message_reference": {
+      "channel_id": "728714605156892744",
+      "message_id": "1209130036926484490",
+      "guild_id": "728714241242169406"
+    },
+    "referenced_message": {
+      "id": "1209130036926484490",
+      "type": 0,
+      "content": "<@&1156625309366485052> What I want it to print out is:\n\nThe number (number I am squaring) squared is:\", (hey(num) ** 2) “.”)\n\nThe number 5 squared is: 25.\n\n# 6. Write a function hey that takes a number as a parameter, squares it, and output\n#   the parameters squared.\n\n\ndef hey(num):\n    print(\"The number squared is:\", (5 ** 2))\n\ndef main():\n    hey(5)\n    hey(0)\n    hey(-3)\n\nmain()\nC:\\Users\\Sherry\\PycharmProjects\\Sandbox\\venv\\Scripts\\python.exe C:/Users/Sherry/PycharmProjects/Sandbox/practice.py\n\nThe number squared is: 25\nThe number squared is: 25\nThe number squared is: 25\n\nProcess finished with exit code 0",
+      "channel_id": "728714605156892744",
+      "author": {
+        "id": "1192695630951358486",
+        "username": "herry_29026",
+        "avatar": null,
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "$herry",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "mention_roles": ["1156625309366485052"],
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false,
+      "timestamp": "2024-02-19T13:31:05.353000+00:00",
+      "edited_timestamp": null,
+      "flags": 0,
+      "components": []
+    }
+  },
+  {
+    "id": "1209310228932468757",
+    "type": 0,
+    "content": "OK.  I'll work on it. Thanks.",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "1056757027784904784",
+      "username": "walter_88053",
+      "avatar": null,
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Walter$",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-20T01:27:06.475000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": []
+  },
+  {
+    "id": "1209308262630170674",
+    "type": 0,
+    "content": "Basically all you need to do is make a file with any name you want, write to it, and then read it after with a .txt added to the name of the file. Then you can run a loop to print the contents of the file with a dash added",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "290330793312780290",
+      "username": "konnen",
+      "avatar": "db94b05c1ce0bc9f2e764f64ee03e807",
+      "discriminator": "0",
+      "public_flags": 128,
+      "premium_type": 0,
+      "flags": 128,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Konnen",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-20T01:19:17.672000+00:00",
+    "edited_timestamp": "2024-02-20T01:21:29.523000+00:00",
+    "flags": 0,
+    "components": []
+  },
+  {
+    "id": "1209307777743192095",
+    "type": 0,
+    "content": "<@1056757027784904784> Hey, so apparently the code you had was the code for file_write.py when the question was to make a function called file_read.py that reads from a pre-existing file",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "290330793312780290",
+      "username": "konnen",
+      "avatar": "db94b05c1ce0bc9f2e764f64ee03e807",
+      "discriminator": "0",
+      "public_flags": 128,
+      "premium_type": 0,
+      "flags": 128,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Konnen",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [
+      {
+        "id": "1209307777550393474",
+        "filename": "image.png",
+        "size": 17168,
+        "url": "https://cdn.discordapp.com/attachments/728714605156892744/1209307777550393474/image.png?ex=65e672a2&is=65d3fda2&hm=6d2279a04d1134867f2e6d2ed66919b6caea2d86b72463fe70695df791dc5d67&",
+        "proxy_url": "https://media.discordapp.net/attachments/728714605156892744/1209307777550393474/image.png?ex=65e672a2&is=65d3fda2&hm=6d2279a04d1134867f2e6d2ed66919b6caea2d86b72463fe70695df791dc5d67&",
+        "width": 817,
+        "height": 465,
+        "content_type": "image/png",
+        "content_scan_version": 1,
+        "placeholder": "PggCBIBxl8uAi4iUe5gAAAAAAA==",
+        "placeholder_version": 1
+      }
+    ],
+    "embeds": [],
+    "mentions": [
+      {
+        "id": "1056757027784904784",
+        "username": "walter_88053",
+        "avatar": null,
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Walter$",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      }
+    ],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-20T01:17:22.066000+00:00",
+    "edited_timestamp": "2024-02-20T01:17:31.468000+00:00",
+    "flags": 0,
+    "components": []
+  },
+  {
+    "id": "1209242022993731666",
+    "type": 19,
+    "content": "https://tenor.com/view/jungle-welcome-vocalist-band-gif-7617009",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "1200595592204783658",
+      "username": "lucky_beetle_62496",
+      "avatar": "f78f3bee0a36ae45da202a5543c237af",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Aly",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [
+      {
+        "type": "gifv",
+        "url": "https://tenor.com/view/jungle-welcome-vocalist-band-gif-7617009",
+        "reference_id": "1209242022993731666",
+        "provider": {
+          "name": "Tenor",
+          "url": "https://tenor.co"
+        },
+        "thumbnail": {
+          "url": "https://media.tenor.com/zNnli7P432gAAAAe/jungle-welcome.png",
+          "proxy_url": "https://images-ext-1.discordapp.net/external/MGEt0Mn5vHW-H_OYZ2xsrZPClDfnbW-TC6yLqXbLg1o/https/media.tenor.com/zNnli7P432gAAAAe/jungle-welcome.png",
+          "width": 384,
+          "height": 288,
+          "placeholder": "lwcKDYIJlHpmh4d8d1d4jCugtmB4",
+          "placeholder_version": 1
+        },
+        "video": {
+          "url": "https://media.tenor.com/zNnli7P432gAAAPo/jungle-welcome.mp4",
+          "proxy_url": "https://images-ext-2.discordapp.net/external/cveAwAesnjCfbTmreMjmP-XFJ4bJoxThZCMZEb1PaHI/https/media.tenor.com/zNnli7P432gAAAPo/jungle-welcome.mp4",
+          "width": 384,
+          "height": 288,
+          "placeholder": "lwcKDYIJlHpmh4d8d1d4jCugtmB4",
+          "placeholder_version": 1
+        },
+        "content_scan_version": 1
+      }
+    ],
+    "mentions": [
+      {
+        "id": "1202046296597475478",
+        "username": "krisbailey_80844",
+        "avatar": "bf6ca3959f84b80c06f4872a9b03a2df",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "KrisB",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      }
+    ],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-19T20:56:04.912000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "message_reference": {
+      "channel_id": "728714605156892744",
+      "message_id": "1209240772596211722",
+      "guild_id": "728714241242169406"
+    },
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "🎉"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "😹"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ],
+    "referenced_message": {
+      "id": "1209240772596211722",
+      "type": 19,
+      "content": "<@1200595592204783658> and <@718849264876519434> - I get 6.41 when I use statistics.stdev(), but I get 6.29 by using statistics.pstdev() - my guess is someone used pstdev() when creating the sample output.   Like you said, it hasn't been addressed by the faculty yet.  Anywho...thanks for the congrats on advancing...the madhouse level?  Sounds intriguing 😁",
+      "channel_id": "728714605156892744",
+      "author": {
+        "id": "1202046296597475478",
+        "username": "krisbailey_80844",
+        "avatar": "bf6ca3959f84b80c06f4872a9b03a2df",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "KrisB",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [
+        {
+          "id": "718849264876519434",
+          "username": "nickrt8",
+          "avatar": "3faf85d06cc9ccb2327600155549ffb2",
+          "discriminator": "0",
+          "public_flags": 0,
+          "premium_type": 0,
+          "flags": 0,
+          "banner": null,
+          "accent_color": null,
+          "global_name": "NickRT8",
+          "avatar_decoration_data": null,
+          "banner_color": null
+        },
+        {
+          "id": "1200595592204783658",
+          "username": "lucky_beetle_62496",
+          "avatar": "f78f3bee0a36ae45da202a5543c237af",
+          "discriminator": "0",
+          "public_flags": 0,
+          "premium_type": 0,
+          "flags": 0,
+          "banner": null,
+          "accent_color": null,
+          "global_name": "Aly",
+          "avatar_decoration_data": null,
+          "banner_color": null
+        }
+      ],
+      "mention_roles": [],
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false,
+      "timestamp": "2024-02-19T20:51:06.794000+00:00",
+      "edited_timestamp": null,
+      "flags": 0,
+      "components": [],
+      "message_reference": {
+        "channel_id": "728714605156892744",
+        "message_id": "1209236493218881596",
+        "guild_id": "728714241242169406"
+      }
+    }
+  },
+  {
+    "id": "1209240772596211722",
+    "type": 19,
+    "content": "<@1200595592204783658> and <@718849264876519434> - I get 6.41 when I use statistics.stdev(), but I get 6.29 by using statistics.pstdev() - my guess is someone used pstdev() when creating the sample output.   Like you said, it hasn't been addressed by the faculty yet.  Anywho...thanks for the congrats on advancing...the madhouse level?  Sounds intriguing 😁",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "1202046296597475478",
+      "username": "krisbailey_80844",
+      "avatar": "bf6ca3959f84b80c06f4872a9b03a2df",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "KrisB",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [
+      {
+        "id": "718849264876519434",
+        "username": "nickrt8",
+        "avatar": "3faf85d06cc9ccb2327600155549ffb2",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "NickRT8",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      },
+      {
+        "id": "1200595592204783658",
+        "username": "lucky_beetle_62496",
+        "avatar": "f78f3bee0a36ae45da202a5543c237af",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Aly",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      }
+    ],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-19T20:51:06.794000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "message_reference": {
+      "channel_id": "728714605156892744",
+      "message_id": "1209236493218881596",
+      "guild_id": "728714241242169406"
+    },
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🧠"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🤯"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ],
+    "referenced_message": {
+      "id": "1209236493218881596",
+      "type": 19,
+      "content": "and <@1202046296597475478>  yep, the solution video has what I get by calling stdev for calculating deviation numbers . the issue has not been addressed by the faculty. However,  i believe we're not the only ones, as other were getting same right answers 🤓",
+      "channel_id": "728714605156892744",
+      "author": {
+        "id": "1200595592204783658",
+        "username": "lucky_beetle_62496",
+        "avatar": "f78f3bee0a36ae45da202a5543c237af",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Aly",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [
+        {
+          "id": "718849264876519434",
+          "username": "nickrt8",
+          "avatar": "3faf85d06cc9ccb2327600155549ffb2",
+          "discriminator": "0",
+          "public_flags": 0,
+          "premium_type": 0,
+          "flags": 0,
+          "banner": null,
+          "accent_color": null,
+          "global_name": "NickRT8",
+          "avatar_decoration_data": null,
+          "banner_color": null
+        },
+        {
+          "id": "1202046296597475478",
+          "username": "krisbailey_80844",
+          "avatar": "bf6ca3959f84b80c06f4872a9b03a2df",
+          "discriminator": "0",
+          "public_flags": 0,
+          "premium_type": 0,
+          "flags": 0,
+          "banner": null,
+          "accent_color": null,
+          "global_name": "KrisB",
+          "avatar_decoration_data": null,
+          "banner_color": null
+        }
+      ],
+      "mention_roles": [],
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false,
+      "timestamp": "2024-02-19T20:34:06.511000+00:00",
+      "edited_timestamp": null,
+      "flags": 0,
+      "components": [],
+      "message_reference": {
+        "channel_id": "728714605156892744",
+        "message_id": "1209231148589387897",
+        "guild_id": "728714241242169406"
+      }
+    }
+  },
+  {
+    "id": "1209236493218881596",
+    "type": 19,
+    "content": "and <@1202046296597475478>  yep, the solution video has what I get by calling stdev for calculating deviation numbers . the issue has not been addressed by the faculty. However,  i believe we're not the only ones, as other were getting same right answers 🤓",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "1200595592204783658",
+      "username": "lucky_beetle_62496",
+      "avatar": "f78f3bee0a36ae45da202a5543c237af",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Aly",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [
+      {
+        "id": "718849264876519434",
+        "username": "nickrt8",
+        "avatar": "3faf85d06cc9ccb2327600155549ffb2",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "NickRT8",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      },
+      {
+        "id": "1202046296597475478",
+        "username": "krisbailey_80844",
+        "avatar": "bf6ca3959f84b80c06f4872a9b03a2df",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "KrisB",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      }
+    ],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-19T20:34:06.511000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "message_reference": {
+      "channel_id": "728714605156892744",
+      "message_id": "1209231148589387897",
+      "guild_id": "728714241242169406"
+    },
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ],
+    "referenced_message": {
+      "id": "1209231148589387897",
+      "type": 19,
+      "content": "Hello <@1200595592204783658> & <@1202046296597475478>, I achieved the same result (6.41), not sure where the \"sample data\" was produced, but my output result was the same as yours😁",
+      "channel_id": "728714605156892744",
+      "author": {
+        "id": "718849264876519434",
+        "username": "nickrt8",
+        "avatar": "3faf85d06cc9ccb2327600155549ffb2",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "NickRT8",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [
+        {
+          "id": "1200595592204783658",
+          "username": "lucky_beetle_62496",
+          "avatar": "f78f3bee0a36ae45da202a5543c237af",
+          "discriminator": "0",
+          "public_flags": 0,
+          "premium_type": 0,
+          "flags": 0,
+          "banner": null,
+          "accent_color": null,
+          "global_name": "Aly",
+          "avatar_decoration_data": null,
+          "banner_color": null
+        },
+        {
+          "id": "1202046296597475478",
+          "username": "krisbailey_80844",
+          "avatar": "bf6ca3959f84b80c06f4872a9b03a2df",
+          "discriminator": "0",
+          "public_flags": 0,
+          "premium_type": 0,
+          "flags": 0,
+          "banner": null,
+          "accent_color": null,
+          "global_name": "KrisB",
+          "avatar_decoration_data": null,
+          "banner_color": null
+        }
+      ],
+      "mention_roles": [],
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false,
+      "timestamp": "2024-02-19T20:12:52.252000+00:00",
+      "edited_timestamp": null,
+      "flags": 0,
+      "components": [],
+      "message_reference": {
+        "channel_id": "728714605156892744",
+        "message_id": "1209193527720808558",
+        "guild_id": "728714241242169406"
+      }
+    }
+  },
+  {
+    "id": "1209235461785124945",
+    "type": 19,
+    "content": "Hey, Kris.  The solution video actually has what you're getting, I believe.  I can go back and confirm!! Congrats on moving onto madhouse level 🤪",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "1200595592204783658",
+      "username": "lucky_beetle_62496",
+      "avatar": "f78f3bee0a36ae45da202a5543c237af",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Aly",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [
+      {
+        "id": "1202046296597475478",
+        "username": "krisbailey_80844",
+        "avatar": "bf6ca3959f84b80c06f4872a9b03a2df",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "KrisB",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      }
+    ],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-19T20:30:00.598000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "message_reference": {
+      "channel_id": "728714605156892744",
+      "message_id": "1209193527720808558",
+      "guild_id": "728714241242169406"
+    },
+    "referenced_message": {
+      "id": "1209193527720808558",
+      "type": 0,
+      "content": "<@1200595592204783658> did you ever get an answer about why the standard deviation numbers were off between the sample data and what actually happened with the code?  Sample: 6.29  Output from code: 6.41.  I didn't see an answer here and it's not addressed in the solution video.  I stumbled upon it when I was calculating the STD in Excel.  Try the statistics.pstdev instead of statistics.stdev",
+      "channel_id": "728714605156892744",
+      "author": {
+        "id": "1202046296597475478",
+        "username": "krisbailey_80844",
+        "avatar": "bf6ca3959f84b80c06f4872a9b03a2df",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "KrisB",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [
+        {
+          "id": "1200595592204783658",
+          "username": "lucky_beetle_62496",
+          "avatar": "f78f3bee0a36ae45da202a5543c237af",
+          "discriminator": "0",
+          "public_flags": 0,
+          "premium_type": 0,
+          "flags": 0,
+          "banner": null,
+          "accent_color": null,
+          "global_name": "Aly",
+          "avatar_decoration_data": null,
+          "banner_color": null
+        }
+      ],
+      "mention_roles": [],
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false,
+      "timestamp": "2024-02-19T17:43:22.738000+00:00",
+      "edited_timestamp": null,
+      "flags": 0,
+      "components": []
+    }
+  },
+  {
+    "id": "1209231148589387897",
+    "type": 19,
+    "content": "Hello <@1200595592204783658> & <@1202046296597475478>, I achieved the same result (6.41), not sure where the \"sample data\" was produced, but my output result was the same as yours😁",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "718849264876519434",
+      "username": "nickrt8",
+      "avatar": "3faf85d06cc9ccb2327600155549ffb2",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "NickRT8",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [
+      {
+        "id": "1200595592204783658",
+        "username": "lucky_beetle_62496",
+        "avatar": "f78f3bee0a36ae45da202a5543c237af",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Aly",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      },
+      {
+        "id": "1202046296597475478",
+        "username": "krisbailey_80844",
+        "avatar": "bf6ca3959f84b80c06f4872a9b03a2df",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "KrisB",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      }
+    ],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-19T20:12:52.252000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "message_reference": {
+      "channel_id": "728714605156892744",
+      "message_id": "1209193527720808558",
+      "guild_id": "728714241242169406"
+    },
+    "referenced_message": {
+      "id": "1209193527720808558",
+      "type": 0,
+      "content": "<@1200595592204783658> did you ever get an answer about why the standard deviation numbers were off between the sample data and what actually happened with the code?  Sample: 6.29  Output from code: 6.41.  I didn't see an answer here and it's not addressed in the solution video.  I stumbled upon it when I was calculating the STD in Excel.  Try the statistics.pstdev instead of statistics.stdev",
+      "channel_id": "728714605156892744",
+      "author": {
+        "id": "1202046296597475478",
+        "username": "krisbailey_80844",
+        "avatar": "bf6ca3959f84b80c06f4872a9b03a2df",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "KrisB",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [
+        {
+          "id": "1200595592204783658",
+          "username": "lucky_beetle_62496",
+          "avatar": "f78f3bee0a36ae45da202a5543c237af",
+          "discriminator": "0",
+          "public_flags": 0,
+          "premium_type": 0,
+          "flags": 0,
+          "banner": null,
+          "accent_color": null,
+          "global_name": "Aly",
+          "avatar_decoration_data": null,
+          "banner_color": null
+        }
+      ],
+      "mention_roles": [],
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false,
+      "timestamp": "2024-02-19T17:43:22.738000+00:00",
+      "edited_timestamp": null,
+      "flags": 0,
+      "components": []
+    }
+  },
+  {
+    "id": "1209212045392871505",
+    "type": 0,
+    "content": "Hi KrisB! We have received your help request! You can expect a reply from a staff or peer mentor within 24 hours, directly to your message in discord!",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "1156278053547286580",
+      "username": "JoyOfCodingBot",
+      "avatar": "8554a90169e32620d5e3bed47f686c34",
+      "discriminator": "8809",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "bot": true,
+      "banner": null,
+      "accent_color": null,
+      "global_name": null,
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-19T18:56:57.695000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": []
+  },
+  {
+    "id": "1209212044340101213",
+    "type": 0,
+    "content": "<@&1156625309366485052> \"it's coding time!\"",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "1202046296597475478",
+      "username": "krisbailey_80844",
+      "avatar": "bf6ca3959f84b80c06f4872a9b03a2df",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "KrisB",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [],
+    "mention_roles": ["1156625309366485052"],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-19T18:56:57.444000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "✅"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "id": "1209193527720808558",
+    "type": 0,
+    "content": "<@1200595592204783658> did you ever get an answer about why the standard deviation numbers were off between the sample data and what actually happened with the code?  Sample: 6.29  Output from code: 6.41.  I didn't see an answer here and it's not addressed in the solution video.  I stumbled upon it when I was calculating the STD in Excel.  Try the statistics.pstdev instead of statistics.stdev",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "1202046296597475478",
+      "username": "krisbailey_80844",
+      "avatar": "bf6ca3959f84b80c06f4872a9b03a2df",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "KrisB",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [
+      {
+        "id": "1200595592204783658",
+        "username": "lucky_beetle_62496",
+        "avatar": "f78f3bee0a36ae45da202a5543c237af",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Aly",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      }
+    ],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-19T17:43:22.738000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": []
+  },
+  {
+    "id": "1209184378723500085",
+    "type": 0,
+    "content": "Hi Nomad Norstar Phoenix! We have received your help request! You can expect a reply from a staff or peer mentor within 24 hours, directly to your message in discord!",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "1156278053547286580",
+      "username": "JoyOfCodingBot",
+      "avatar": "8554a90169e32620d5e3bed47f686c34",
+      "discriminator": "8809",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "bot": true,
+      "banner": null,
+      "accent_color": null,
+      "global_name": null,
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-19T17:07:01.447000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": []
+  },
+  {
+    "id": "1209184376085024808",
+    "type": 0,
+    "content": "<@&1156625309366485052> I am looking for feedback on my code for the data project.",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "912899799790022667",
+      "username": "norstar666",
+      "avatar": "eb2f2f813464f1245750e9b9f51db79c",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Nomad Norstar Phoenix",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [
+      {
+        "id": "1209184375544094790",
+        "filename": "practice_Data_Project.PNG",
+        "size": 99148,
+        "url": "https://cdn.discordapp.com/attachments/728714605156892744/1209184375544094790/practice_Data_Project.PNG?ex=65e5ffb4&is=65d38ab4&hm=cab0afd956936df74c8dbd573e0a87ca136459900fe215ec52a1bb4959449915&",
+        "proxy_url": "https://media.discordapp.net/attachments/728714605156892744/1209184375544094790/practice_Data_Project.PNG?ex=65e5ffb4&is=65d38ab4&hm=cab0afd956936df74c8dbd573e0a87ca136459900fe215ec52a1bb4959449915&",
+        "width": 682,
+        "height": 1682,
+        "content_type": "image/png",
+        "content_scan_version": 1,
+        "placeholder": "CQgCCwSfi1eHi4i574vqn6c=",
+        "placeholder_version": 1
+      }
+    ],
+    "embeds": [],
+    "mentions": [],
+    "mention_roles": ["1156625309366485052"],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-19T17:07:00.818000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": []
+  },
+  {
+    "id": "1209143871133720658",
+    "type": 19,
+    "content": "It absolutely is.  I just knew it was a scope issue, but after moving statements all over the place and not getting anywhere I got frustrated.  It took your suggestion that it was the variable initialization causing an issue to get the rest to click.  Sometimes it just takes a spark... 🤩",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "1202046296597475478",
+      "username": "krisbailey_80844",
+      "avatar": "bf6ca3959f84b80c06f4872a9b03a2df",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "KrisB",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [
+      {
+        "id": "1200595592204783658",
+        "username": "lucky_beetle_62496",
+        "avatar": "f78f3bee0a36ae45da202a5543c237af",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Aly",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      }
+    ],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-19T14:26:03.685000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "message_reference": {
+      "channel_id": "728714605156892744",
+      "message_id": "1209141334938619904",
+      "guild_id": "728714241242169406"
+    },
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "🥳"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ],
+    "referenced_message": {
+      "id": "1209141334938619904",
+      "type": 19,
+      "content": "monkey-ing around with the scope is a part of learning 😉",
+      "channel_id": "728714605156892744",
+      "author": {
+        "id": "1200595592204783658",
+        "username": "lucky_beetle_62496",
+        "avatar": "f78f3bee0a36ae45da202a5543c237af",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Aly",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [
+        {
+          "id": "1202046296597475478",
+          "username": "krisbailey_80844",
+          "avatar": "bf6ca3959f84b80c06f4872a9b03a2df",
+          "discriminator": "0",
+          "public_flags": 0,
+          "premium_type": 0,
+          "flags": 0,
+          "banner": null,
+          "accent_color": null,
+          "global_name": "KrisB",
+          "avatar_decoration_data": null,
+          "banner_color": null
+        }
+      ],
+      "mention_roles": [],
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false,
+      "timestamp": "2024-02-19T14:15:59.009000+00:00",
+      "edited_timestamp": null,
+      "flags": 0,
+      "components": [],
+      "message_reference": {
+        "channel_id": "728714605156892744",
+        "message_id": "1209135746875654176",
+        "guild_id": "728714241242169406"
+      }
+    }
+  },
+  {
+    "id": "1209142667225596011",
+    "type": 19,
+    "content": "I think it's a VS Code thing.  I kept finding this possible answer when googling - \"could also be due to the terminal not being in the current directory where said file is placed.\"  Not sure this is helpful, but here the link.  https://stackoverflow.com/questions/73988172/vs-code-keeps-saying-there-is-not-such-file-when-i-try-to-run-my-code",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "1202046296597475478",
+      "username": "krisbailey_80844",
+      "avatar": "bf6ca3959f84b80c06f4872a9b03a2df",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "KrisB",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [
+      {
+        "type": "link",
+        "url": "https://stackoverflow.com/questions/73988172/vs-code-keeps-saying-there-is-not-such-file-when-i-try-to-run-my-code",
+        "title": "VS Code keeps saying there is not such file when I try to run my code",
+        "description": "I am new to the world of coding, which means I’m new to VS Code. Currently I’m self learning Python and typed in some code in VS Code to make sure I really understand what was going on (OOP if any ...",
+        "reference_id": "1209142667225596011",
+        "provider": {
+          "name": "Stack Overflow"
+        },
+        "thumbnail": {
+          "url": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+          "proxy_url": "https://images-ext-1.discordapp.net/external/VbfwnzN2MM794XNccNxDzrB1YeuPrxR53y11bwRfflY/%3Fv%3D73d79a89bded/https/cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon%402.png",
+          "width": 316,
+          "height": 316,
+          "placeholder": "5pqCDQISuRZxe33SB0aPYfQYB5l1iYOrWA==",
+          "placeholder_version": 1
+        },
+        "content_scan_version": 1
+      }
+    ],
+    "mentions": [
+      {
+        "id": "486929383068532766",
+        "username": "wistgrwolf",
+        "avatar": "2580ee23899203538794c825cfbbba65",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Wistgrwolf",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      }
+    ],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-19T14:21:16.651000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "message_reference": {
+      "channel_id": "728714605156892744",
+      "message_id": "1209018053988458557",
+      "guild_id": "728714241242169406"
+    },
+    "referenced_message": {
+      "id": "1209018053988458557",
+      "type": 0,
+      "content": "Here are screenshots of both...",
+      "channel_id": "728714605156892744",
+      "author": {
+        "id": "486929383068532766",
+        "username": "wistgrwolf",
+        "avatar": "2580ee23899203538794c825cfbbba65",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Wistgrwolf",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      },
+      "attachments": [
+        {
+          "id": "1209018053652652093",
+          "filename": "Screenshot_2024-02-19_at_01.00.57.png",
+          "size": 420399,
+          "url": "https://cdn.discordapp.com/attachments/728714605156892744/1209018053652652093/Screenshot_2024-02-19_at_01.00.57.png?ex=65e564ce&is=65d2efce&hm=30211435cad3e62614a952dfab5222abafb383ef21423da42d4732ee205e16d6&",
+          "proxy_url": "https://media.discordapp.net/attachments/728714605156892744/1209018053652652093/Screenshot_2024-02-19_at_01.00.57.png?ex=65e564ce&is=65d2efce&hm=30211435cad3e62614a952dfab5222abafb383ef21423da42d4732ee205e16d6&",
+          "width": 2278,
+          "height": 1308,
+          "content_type": "image/png",
+          "content_scan_version": 1,
+          "placeholder": "CfgBBIBslZqPiXlLhW0Efg4opA==",
+          "placeholder_version": 1
+        },
+        {
+          "id": "1209018054034325564",
+          "filename": "Screenshot_2024-02-19_at_01.01.20.png",
+          "size": 369174,
+          "url": "https://cdn.discordapp.com/attachments/728714605156892744/1209018054034325564/Screenshot_2024-02-19_at_01.01.20.png?ex=65e564ce&is=65d2efce&hm=ab58d46ba42ecaf149010388e56efbb8529fae7cea8af76a4adb7f139a9ecc28&",
+          "proxy_url": "https://media.discordapp.net/attachments/728714605156892744/1209018054034325564/Screenshot_2024-02-19_at_01.01.20.png?ex=65e564ce&is=65d2efce&hm=ab58d46ba42ecaf149010388e56efbb8529fae7cea8af76a4adb7f139a9ecc28&",
+          "width": 2278,
+          "height": 1308,
+          "content_type": "image/png",
+          "content_scan_version": 1,
+          "placeholder": "CfgFBICKl4h/iHlpdnsEfg43pA==",
+          "placeholder_version": 1
+        }
+      ],
+      "embeds": [],
+      "mentions": [],
+      "mention_roles": [],
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false,
+      "timestamp": "2024-02-19T06:06:06.540000+00:00",
+      "edited_timestamp": null,
+      "flags": 0,
+      "components": []
+    }
+  },
+  {
+    "id": "1209141334938619904",
+    "type": 19,
+    "content": "monkey-ing around with the scope is a part of learning 😉",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "1200595592204783658",
+      "username": "lucky_beetle_62496",
+      "avatar": "f78f3bee0a36ae45da202a5543c237af",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Aly",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [
+      {
+        "id": "1202046296597475478",
+        "username": "krisbailey_80844",
+        "avatar": "bf6ca3959f84b80c06f4872a9b03a2df",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "KrisB",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      }
+    ],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-19T14:15:59.009000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "message_reference": {
+      "channel_id": "728714605156892744",
+      "message_id": "1209135746875654176",
+      "guild_id": "728714241242169406"
+    },
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ],
+    "referenced_message": {
+      "id": "1209135746875654176",
+      "type": 19,
+      "content": "<@1200595592204783658> THANK YOU!!!!  Moving the variables that were being initialized was part of the answer.  I had to move the initialization of the aggregating variables (total_lines and total_words) OUTSIDE of the outer loop as well.  I realized that resetting the totals to 0 with each new file was causing part of the problem.   I also moved the aggregating statements for the total_line and total_word back inside the outer loop.",
+      "channel_id": "728714605156892744",
+      "author": {
+        "id": "1202046296597475478",
+        "username": "krisbailey_80844",
+        "avatar": "bf6ca3959f84b80c06f4872a9b03a2df",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "KrisB",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [
+        {
+          "id": "1200595592204783658",
+          "username": "lucky_beetle_62496",
+          "avatar": "f78f3bee0a36ae45da202a5543c237af",
+          "discriminator": "0",
+          "public_flags": 0,
+          "premium_type": 0,
+          "flags": 0,
+          "banner": null,
+          "accent_color": null,
+          "global_name": "Aly",
+          "avatar_decoration_data": null,
+          "banner_color": null
+        }
+      ],
+      "mention_roles": [],
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false,
+      "timestamp": "2024-02-19T13:53:46.711000+00:00",
+      "edited_timestamp": "2024-02-19T13:57:03.465000+00:00",
+      "flags": 0,
+      "components": [],
+      "message_reference": {
+        "channel_id": "728714605156892744",
+        "message_id": "1208971388807811132",
+        "guild_id": "728714241242169406"
+      }
+    }
+  },
+  {
+    "id": "1209140154929909821",
+    "type": 19,
+    "content": "Hello <@1192695630951358486>, review your 'hey' function definition - you ran three different values for the variable \"num\" in the main function, but is \"num\" used in 'hey'?🤔",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "718849264876519434",
+      "username": "nickrt8",
+      "avatar": "3faf85d06cc9ccb2327600155549ffb2",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "NickRT8",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [
+      {
+        "id": "1192695630951358486",
+        "username": "herry_29026",
+        "avatar": null,
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "$herry",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      }
+    ],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-19T14:11:17.673000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "message_reference": {
+      "channel_id": "728714605156892744",
+      "message_id": "1209130036926484490",
+      "guild_id": "728714241242169406"
+    },
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👆"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ],
+    "referenced_message": {
+      "id": "1209130036926484490",
+      "type": 0,
+      "content": "<@&1156625309366485052> What I want it to print out is:\n\nThe number (number I am squaring) squared is:\", (hey(num) ** 2) “.”)\n\nThe number 5 squared is: 25.\n\n# 6. Write a function hey that takes a number as a parameter, squares it, and output\n#   the parameters squared.\n\n\ndef hey(num):\n    print(\"The number squared is:\", (5 ** 2))\n\ndef main():\n    hey(5)\n    hey(0)\n    hey(-3)\n\nmain()\nC:\\Users\\Sherry\\PycharmProjects\\Sandbox\\venv\\Scripts\\python.exe C:/Users/Sherry/PycharmProjects/Sandbox/practice.py\n\nThe number squared is: 25\nThe number squared is: 25\nThe number squared is: 25\n\nProcess finished with exit code 0",
+      "channel_id": "728714605156892744",
+      "author": {
+        "id": "1192695630951358486",
+        "username": "herry_29026",
+        "avatar": null,
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "$herry",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "mention_roles": ["1156625309366485052"],
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false,
+      "timestamp": "2024-02-19T13:31:05.353000+00:00",
+      "edited_timestamp": null,
+      "flags": 0,
+      "components": []
+    }
+  },
+  {
+    "id": "1209136216004370462",
+    "type": 0,
+    "content": "This is my now properly functioning code!  Thanks again for your help!",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "1202046296597475478",
+      "username": "krisbailey_80844",
+      "avatar": "bf6ca3959f84b80c06f4872a9b03a2df",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "KrisB",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [
+      {
+        "id": "1209136215782330378",
+        "filename": "image.png",
+        "size": 61873,
+        "url": "https://cdn.discordapp.com/attachments/728714605156892744/1209136215782330378/image.png?ex=65e5d2da&is=65d35dda&hm=233b21714810ddf48671b2fbbfcde900b5823a44bd86b6be5a3e34c7da67f39b&",
+        "proxy_url": "https://media.discordapp.net/attachments/728714605156892744/1209136215782330378/image.png?ex=65e5d2da&is=65d35dda&hm=233b21714810ddf48671b2fbbfcde900b5823a44bd86b6be5a3e34c7da67f39b&",
+        "width": 795,
+        "height": 481,
+        "content_type": "image/png",
+        "content_scan_version": 1,
+        "placeholder": "yPcBBIBWt3aAe4aKhngEdJgwhg==",
+        "placeholder_version": 1
+      }
+    ],
+    "embeds": [],
+    "mentions": [],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-19T13:55:38.560000+00:00",
+    "edited_timestamp": "2024-02-19T13:56:53.168000+00:00",
+    "flags": 0,
+    "components": [],
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "😁"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "id": "1209135746875654176",
+    "type": 19,
+    "content": "<@1200595592204783658> THANK YOU!!!!  Moving the variables that were being initialized was part of the answer.  I had to move the initialization of the aggregating variables (total_lines and total_words) OUTSIDE of the outer loop as well.  I realized that resetting the totals to 0 with each new file was causing part of the problem.   I also moved the aggregating statements for the total_line and total_word back inside the outer loop.",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "1202046296597475478",
+      "username": "krisbailey_80844",
+      "avatar": "bf6ca3959f84b80c06f4872a9b03a2df",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "KrisB",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [
+      {
+        "id": "1200595592204783658",
+        "username": "lucky_beetle_62496",
+        "avatar": "f78f3bee0a36ae45da202a5543c237af",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Aly",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      }
+    ],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-19T13:53:46.711000+00:00",
+    "edited_timestamp": "2024-02-19T13:57:03.465000+00:00",
+    "flags": 0,
+    "components": [],
+    "message_reference": {
+      "channel_id": "728714605156892744",
+      "message_id": "1208971388807811132",
+      "guild_id": "728714241242169406"
+    },
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "❤️‍🔥"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ],
+    "referenced_message": {
+      "id": "1208971388807811132",
+      "type": 19,
+      "content": "Hi, Kris. What would happen if you put word_count=0 in your outer loop?",
+      "channel_id": "728714605156892744",
+      "author": {
+        "id": "1200595592204783658",
+        "username": "lucky_beetle_62496",
+        "avatar": "f78f3bee0a36ae45da202a5543c237af",
+        "discriminator": "0",
+        "public_flags": 0,
+        "premium_type": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Aly",
+        "avatar_decoration_data": null,
+        "banner_color": null
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [
+        {
+          "id": "1202046296597475478",
+          "username": "krisbailey_80844",
+          "avatar": "bf6ca3959f84b80c06f4872a9b03a2df",
+          "discriminator": "0",
+          "public_flags": 0,
+          "premium_type": 0,
+          "flags": 0,
+          "banner": null,
+          "accent_color": null,
+          "global_name": "KrisB",
+          "avatar_decoration_data": null,
+          "banner_color": null
+        }
+      ],
+      "mention_roles": [],
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false,
+      "timestamp": "2024-02-19T03:00:40.694000+00:00",
+      "edited_timestamp": null,
+      "flags": 0,
+      "components": [],
+      "message_reference": {
+        "channel_id": "728714605156892744",
+        "message_id": "1208937683137724497",
+        "guild_id": "728714241242169406"
+      }
+    }
+  },
+  {
+    "id": "1209130037660356690",
+    "type": 0,
+    "content": "Hi $herry! We have received your help request! You can expect a reply from a staff or peer mentor within 24 hours, directly to your message in discord!",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "1156278053547286580",
+      "username": "JoyOfCodingBot",
+      "avatar": "8554a90169e32620d5e3bed47f686c34",
+      "discriminator": "8809",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "bot": true,
+      "banner": null,
+      "accent_color": null,
+      "global_name": null,
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-19T13:31:05.528000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": []
+  },
+  {
+    "id": "1209130036926484490",
+    "type": 0,
+    "content": "<@&1156625309366485052> What I want it to print out is:\n\nThe number (number I am squaring) squared is:\", (hey(num) ** 2) “.”)\n\nThe number 5 squared is: 25.\n\n# 6. Write a function hey that takes a number as a parameter, squares it, and output\n#   the parameters squared.\n\n\ndef hey(num):\n    print(\"The number squared is:\", (5 ** 2))\n\ndef main():\n    hey(5)\n    hey(0)\n    hey(-3)\n\nmain()\nC:\\Users\\Sherry\\PycharmProjects\\Sandbox\\venv\\Scripts\\python.exe C:/Users/Sherry/PycharmProjects/Sandbox/practice.py\n\nThe number squared is: 25\nThe number squared is: 25\nThe number squared is: 25\n\nProcess finished with exit code 0",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "1192695630951358486",
+      "username": "herry_29026",
+      "avatar": null,
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "$herry",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [],
+    "mention_roles": ["1156625309366485052"],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-19T13:31:05.353000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": []
+  },
+  {
+    "id": "1209018053988458557",
+    "type": 0,
+    "content": "Here are screenshots of both...",
+    "channel_id": "728714605156892744",
+    "author": {
+      "id": "486929383068532766",
+      "username": "wistgrwolf",
+      "avatar": "2580ee23899203538794c825cfbbba65",
+      "discriminator": "0",
+      "public_flags": 0,
+      "premium_type": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Wistgrwolf",
+      "avatar_decoration_data": null,
+      "banner_color": null
+    },
+    "attachments": [
+      {
+        "id": "1209018053652652093",
+        "filename": "Screenshot_2024-02-19_at_01.00.57.png",
+        "size": 420399,
+        "url": "https://cdn.discordapp.com/attachments/728714605156892744/1209018053652652093/Screenshot_2024-02-19_at_01.00.57.png?ex=65e564ce&is=65d2efce&hm=30211435cad3e62614a952dfab5222abafb383ef21423da42d4732ee205e16d6&",
+        "proxy_url": "https://media.discordapp.net/attachments/728714605156892744/1209018053652652093/Screenshot_2024-02-19_at_01.00.57.png?ex=65e564ce&is=65d2efce&hm=30211435cad3e62614a952dfab5222abafb383ef21423da42d4732ee205e16d6&",
+        "width": 2278,
+        "height": 1308,
+        "content_type": "image/png",
+        "content_scan_version": 1,
+        "placeholder": "CfgBBIBslZqPiXlLhW0Efg4opA==",
+        "placeholder_version": 1
+      },
+      {
+        "id": "1209018054034325564",
+        "filename": "Screenshot_2024-02-19_at_01.01.20.png",
+        "size": 369174,
+        "url": "https://cdn.discordapp.com/attachments/728714605156892744/1209018054034325564/Screenshot_2024-02-19_at_01.01.20.png?ex=65e564ce&is=65d2efce&hm=ab58d46ba42ecaf149010388e56efbb8529fae7cea8af76a4adb7f139a9ecc28&",
+        "proxy_url": "https://media.discordapp.net/attachments/728714605156892744/1209018054034325564/Screenshot_2024-02-19_at_01.01.20.png?ex=65e564ce&is=65d2efce&hm=ab58d46ba42ecaf149010388e56efbb8529fae7cea8af76a4adb7f139a9ecc28&",
+        "width": 2278,
+        "height": 1308,
+        "content_type": "image/png",
+        "content_scan_version": 1,
+        "placeholder": "CfgFBICKl4h/iHlpdnsEfg43pA==",
+        "placeholder_version": 1
+      }
+    ],
+    "embeds": [],
+    "mentions": [],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2024-02-19T06:06:06.540000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": []
+  }
+]
